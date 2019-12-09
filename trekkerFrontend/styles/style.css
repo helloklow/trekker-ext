@@ -1,0 +1,342 @@
+body {
+    font-family: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+      sans-serif;
+    font-weight: 300;
+    background: #fcf4e8;
+  }
+
+  #app-container {
+    width: 1000px;
+    margin: auto;
+    position: relative;
+    bottom: 85px;
+  }
+  
+  h3 {
+    line-height: 0px;
+  }
+  
+  h4 {
+    text-align: center;
+    padding-top: 7px;
+    line-height: 15px;
+  }
+  
+  h5 {
+    line-height: 0px;
+    padding: 10px;
+    margin: 0px;
+  }
+  
+  .center-text {
+    text-align: center;
+    margin: 4px;
+  }
+  
+  .small-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0px;
+  }
+
+  #logo {
+    position: relative;
+    height: 185px;
+    left: 425px;
+    top: 100px;
+    padding-bottom: 40px;
+  }
+
+  #user-container {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    float: left;
+    width: 990px;
+    height: 250px;
+    margin: 5px;
+    border-radius: 8px;
+    background: #f9e9d2;
+  }
+
+  #user-card {
+    float: center;
+    width: 240px;
+    height: 250px;
+    border-radius: 3px;
+    position: absolute;
+    left: 370px;
+    background: #bddebd;
+    color: #000000;
+  }
+
+  #login-form {
+    padding-left: 8px;
+  }
+
+  /* #signup-form {
+    position: absolute;
+    left: 430px;
+    bottom: 50px;
+  } */
+
+  /* #or-signup {
+    margin-left: 8px;
+  } */
+
+  /* .welcome {
+    position: relative;
+    bottom: 100px;
+  } */
+
+  /*#search-form {
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  #search-input {
+    font-size: 3rem;
+    border: 3px solid #2E8B57;
+    color: #000000;
+  }
+  
+  input:focus {
+    outline: none;
+  }*/
+  
+  .park-card {
+    float: left;
+    width: 240px;
+    height: 250px;
+    margin: 5px;
+    border-radius: 8px;
+    position: relative;
+    top: 50px;
+    background: #f9e9d2;
+    color: #000000;
+  }
+  
+  .park-pic {
+    visibility: visible;
+    margin: auto;
+    padding-top: 5px;
+    padding-left: 20px;
+  }
+  
+  .park-summary {
+    visibility: hidden; 
+    cursor: pointer;
+    float: left;
+    font-size: 0.7rem;
+    width: 210px;
+    height: 190px;
+    padding-left: 17px;
+    position: absolute;
+    top: 40px;
+    background: #f9e9d2;
+    color: #000000;
+  }
+
+  #visit-form {
+    float: left;
+    position: absolute;
+    top: 35px;
+    right: 350px;
+  }
+
+  #rating-header {
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    bottom: 34px;
+  }
+  
+  #rating-footer {
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    left: 105px;
+    bottom: 34px;
+  }
+
+  #user-parks {
+    float: right;
+    position: absolute;
+    top: 35px;
+    right: 75px;
+  }
+
+  #user-parks-list {
+    list-style: none;
+    font-size: 0.7rem;
+    height: 150px;
+    width: 170px;
+    margin-right: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .visit-icon {
+    background-image: url('images/grey-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    margin: 4px;
+    border: 3px solid #f9e9d2;
+    background-color: #f9e9d2;
+  }
+  
+  .visited-card {
+    float: left;
+    width: 240px;
+    height: 250px;
+    margin: 5px;
+    border-radius: 8px;
+    position: relative;
+    top: 50px;
+    background: #bddebd;
+    color: #000000;
+  }
+  
+  .visited-icon {
+    background-image: url('images/green-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    margin: 4px;
+    border: 3px solid #bddebd;
+    background-color: #bddebd;
+  }
+  
+  .visited-summary {
+    visibility: hidden; 
+    float: left;
+    cursor: pointer;
+    font-size: 0.7rem;
+    width: 210px;
+    height: 190px;
+    padding-left: 17px;
+    position: absolute;
+    top: 40px;
+    background: #bddebd;
+    color: #000000;
+  }
+  
+  .remove-btn {
+    visibility: hidden;
+    background-image: url('images/x-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 4px;
+    bottom: 2px;
+    margin: 4px;
+    border: 3px solid #bddebd;
+    background-color: #bddebd;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+
+
+
+
+
+
+  .form-control, .form-control:focus, .input-group-addon {
+		border-color: #e1e1e1;
+    border-radius: 0;
+  }
+  
+	.user-form {
+    position: absolute;
+    left: 315px;
+		width: 370px;
+		margin: 0 auto;
+    padding: 95px 0;
+  }
+  
+	.user-form h2 {
+		color: #636363;
+    margin: 0 0 15px;
+    font-size: 2rem;
+		text-align: center;
+  }
+ 
+  .user-form form {		
+		border-radius: 1px;
+    margin-bottom: 15px;
+    background: #fff;
+		border: 1px solid #f3f3f3;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+  }
+  
+	.user-form .form-group {
+		margin-bottom: 20px;
+  }
+  
+	.user-form label {
+		font-weight: normal;
+		font-size: 13px;
+  }
+  
+	.user-form .form-control {
+		min-height: 38px;
+		box-shadow: none !important;
+		border-width: 0 0 1px 0;
+  }	
+  
+	.user-form .input-group-addon {
+		max-width: 42px;
+		text-align: center;
+		background: none;
+		border-width: 0 0 1px 0;
+		padding-left: 5px;
+	}
+  .user-form .btn {        
+    font-size: 16px;
+    font-weight: bold;
+		background: #19aa8d;
+    border-radius: 3px;
+		border: none;
+		min-width: 140px;
+    outline: none !important;
+  }
+
+	.user-form .btn:hover, .user-form .btn:focus {
+		background: #179b81;
+  }
+  
+	.user-form a {
+		color: #19aa8d;
+		text-decoration: none;
+  }	
+  
+	.user-form a:hover {
+		text-decoration: underline;
+  }
+  
+	.user-form .fa {
+		font-size: 16px;
+  }
+  
+	.user-form .fa-paper-plane {
+		font-size: 12px;
+	}
