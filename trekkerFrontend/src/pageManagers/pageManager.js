@@ -1,7 +1,7 @@
 class PageManager {
     constructor(container, adapter) {
         this.container = container 
-        // this.adapter = new SignupAdapter(adapter) // Instantiate signup adapter with base adapter (decorate base with token)
+        this.adapter = new SignupAdapter(adapter) // Instantiate signup adapter with base adapter (decorate base with token)
         // this.loginAdapter = new LoginAdapter(adapter)
     }
 
