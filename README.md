@@ -6,11 +6,11 @@ Trekker is a place for U.S. National Park enthusiasts to track which parks they 
 
 • Clone this repo and run `bundle install` to install all application dependencies.
 
-• From the backend directory, run `rails db:seed` to seed all required data.
+• From the backend directory, run `rails db:migrate` followed by `rails db:seed` to create and seed the database.
 
 ## Usage
 
-• Once the repo is cloned, dependencies installed, and data seeded, launch the server from the backend directory by running `rails s`.
+• Once the repo is cloned, dependencies installed, and the database has been migrated and seeded, launch the server from the backend directory by running `rails s`.
 
 • From the frontend directory, launch the application in your browser by running `open index.html`.
 
