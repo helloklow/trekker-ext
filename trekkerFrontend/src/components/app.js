@@ -4,7 +4,7 @@ class App {
         this.initBindingsAndEvents()
         // this.renderPage(new SignupPage(this.pageContainer, this.adapter))
         // this.renderPage(new LoginPage(this.pageContainer, this.adapter))
-        this.renderPage(new UserPage(this.pageContainer, this.adapter))
+        this.renderPage(new UserPage(this.pageContainer, this.parksContainer, this.adapter))
     }
 
     initBindingsAndEvents() {
