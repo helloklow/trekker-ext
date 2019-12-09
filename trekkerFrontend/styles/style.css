@@ -1,3 +1,4 @@
+/* MAIN BODY & CONTAINER DISPLAY -> Remove unused fonts!!! */
 body {
     font-family: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
       sans-serif;
@@ -5,42 +6,14 @@ body {
     background: #fcf4e8;
   }
 
-  #app-container {
+#app-container {
     width: 1000px;
     margin: auto;
     position: relative;
     bottom: 85px;
   }
-  
-  h3 {
-    line-height: 0px;
-  }
-  
-  h4 {
-    text-align: center;
-    padding-top: 7px;
-    line-height: 15px;
-  }
-  
-  h5 {
-    line-height: 0px;
-    padding: 10px;
-    margin: 0px;
-  }
-  
-  .center-text {
-    text-align: center;
-    margin: 4px;
-  }
-  
-  .small-text {
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-align: center;
-    line-height: 0px;
-  }
 
-  #logo {
+#logo {
     position: relative;
     height: 185px;
     left: 425px;
@@ -48,65 +21,63 @@ body {
     padding-bottom: 40px;
   }
 
-  #user-container {
+button:focus {
+    outline: none;
+  }
+  
+/* TEXT DISPLAY */
+h3 {
+    line-height: 0px;
+  }
+  
+h4 {
     text-align: center;
-    position: relative;
-    top: 50px;
-    float: left;
-    width: 990px;
-    height: 250px;
-    margin: 5px;
-    border-radius: 8px;
-    background: #f9e9d2;
+    padding-top: 7px;
+    line-height: 15px;
+  }
+  
+h5 {
+    line-height: 0px;
+    padding: 10px;
+    margin: 0px;
+  }
+  
+.center-text {
+    text-align: center;
+    margin: 4px;
+  }
+  
+.small-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0px;
   }
 
-  #user-card {
-    float: center;
-    width: 240px;
-    height: 250px;
-    border-radius: 3px;
-    position: absolute;
-    left: 370px;
-    background: #bddebd;
-    color: #000000;
-  }
-
-  #login-form {
-    padding-left: 8px;
-  }
-
-  /* #signup-form {
-    position: absolute;
-    left: 430px;
-    bottom: 50px;
-  } */
-
-  /* #or-signup {
-    margin-left: 8px;
-  } */
-
+/* USER FEATURES */
   /* .welcome {
     position: relative;
     bottom: 100px;
-  } */
+  }
 
-  /*#search-form {
+#search-form {
     width: 500px;
     margin: auto;
     margin-top: 50px;
   }
   
-  #search-input {
+#search-input {
     font-size: 3rem;
     border: 3px solid #2E8B57;
     color: #000000;
   }
   
-  input:focus {
+input:focus {
     outline: none;
   }*/
-  
-  .park-card {
+
+/* PARK CARD DISPLAY */
+.park-card {
     float: left;
     width: 240px;
     height: 250px;
@@ -118,14 +89,14 @@ body {
     color: #000000;
   }
   
-  .park-pic {
+.park-pic {
     visibility: visible;
     margin: auto;
     padding-top: 5px;
     padding-left: 20px;
   }
   
-  .park-summary {
+.park-summary {
     visibility: hidden; 
     cursor: pointer;
     float: left;
@@ -139,47 +110,7 @@ body {
     color: #000000;
   }
 
-  #visit-form {
-    float: left;
-    position: absolute;
-    top: 35px;
-    right: 350px;
-  }
-
-  #rating-header {
-    font-size: 0.7rem;
-    font-weight: bold;
-    position: absolute;
-    left: 15px;
-    bottom: 34px;
-  }
-  
-  #rating-footer {
-    font-size: 0.7rem;
-    font-weight: bold;
-    position: absolute;
-    left: 105px;
-    bottom: 34px;
-  }
-
-  #user-parks {
-    float: right;
-    position: absolute;
-    top: 35px;
-    right: 75px;
-  }
-
-  #user-parks-list {
-    list-style: none;
-    font-size: 0.7rem;
-    height: 150px;
-    width: 170px;
-    margin-right: 10px;
-    overflow: hidden;
-    overflow-y: scroll;
-  }
-
-  .visit-icon {
+.visit-icon {
     background-image: url('images/grey-icon.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -194,7 +125,8 @@ body {
     background-color: #f9e9d2;
   }
   
-  .visited-card {
+/* VISITED CARD DISPLAY */
+.visited-card {
     float: left;
     width: 240px;
     height: 250px;
@@ -206,7 +138,7 @@ body {
     color: #000000;
   }
   
-  .visited-icon {
+.visited-icon {
     background-image: url('images/green-icon.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -220,7 +152,7 @@ body {
     background-color: #bddebd;
   }
   
-  .visited-summary {
+.visited-summary {
     visibility: hidden; 
     float: left;
     cursor: pointer;
@@ -234,7 +166,7 @@ body {
     color: #000000;
   }
   
-  .remove-btn {
+.remove-btn {
     visibility: hidden;
     background-image: url('images/x-icon.png');
     background-repeat: no-repeat;
@@ -249,16 +181,8 @@ body {
     border: 3px solid #bddebd;
     background-color: #bddebd;
   }
-  
-  button:focus {
-    outline: none;
-  }
 
-
-
-
-
-
+/* LOGIN & SIGNUP FORMS */
   .form-control, .form-control:focus, .input-group-addon {
 		border-color: #e1e1e1;
     border-radius: 0;
@@ -340,3 +264,67 @@ body {
 	.user-form .fa-paper-plane {
 		font-size: 12px;
 	}
+
+/* OLD OR UNUSED -> Remove if not needed!!! */
+/* #user-container {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    float: left;
+    width: 990px;
+    height: 250px;
+    margin: 5px;
+    border-radius: 8px;
+    background: #f9e9d2;
+  }
+
+  #user-card {
+    float: center;
+    width: 240px;
+    height: 250px;
+    border-radius: 3px;
+    position: absolute;
+    left: 370px;
+    background: #bddebd;
+    color: #000000;
+  } */
+
+  /* #visit-form {
+    float: left;
+    position: absolute;
+    top: 35px;
+    right: 350px;
+  }
+
+  #rating-header {
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    bottom: 34px;
+  }
+  
+  #rating-footer {
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    left: 105px;
+    bottom: 34px;
+  }
+
+  #user-parks {
+    float: right;
+    position: absolute;
+    top: 35px;
+    right: 75px;
+  }
+
+  #user-parks-list {
+    list-style: none;
+    font-size: 0.7rem;
+    height: 150px;
+    width: 170px;
+    margin-right: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+  } */
