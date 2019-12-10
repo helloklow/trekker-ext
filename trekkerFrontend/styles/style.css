@@ -21,7 +21,7 @@ body {
     padding-bottom: 40px;
   }
 
-.welcome {
+.welcome { /* Update position of this text when window is widened! */
     position: relative;
     top: 70px;
     text-align: center;
