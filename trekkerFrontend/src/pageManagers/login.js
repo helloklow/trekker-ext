@@ -27,7 +27,7 @@ class LoginPage extends PageManager {
             await this.adapter.login(params) // If this works, redirect to...
             this.redirect('profile')
         } catch(err) {
-            alert(err) // If it doesn't work, error
+            this.handleAlert(err, 'danger') // If it doesn't work, error
         }
     }
 

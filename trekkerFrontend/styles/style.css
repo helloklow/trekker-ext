@@ -16,7 +16,10 @@ body {
 #alert-container {
   position: relative;
   top: 75px;
-  line-height: 0px;
+  left: 315px;
+  text-align: center;
+  width: 370px;
+  line-height: 8px;
 }
 
 #logo {

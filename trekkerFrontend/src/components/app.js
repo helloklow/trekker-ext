@@ -8,9 +8,9 @@ class App {
             'login': new LoginPage(this.pageContainer, this.adapter),
             'profile': new ProfilePage(this.pageContainer, this.adapter)
         })
-        this.router.assignCallback(this.pageManagerRedirect.bind(this))
-        this.renderPage('signup')
-        this.handleAlert('Hello World', 'danger')
+        this.router.assignRedirect(this.pageManagerRedirect.bind(this))
+        this.router.assignAlertHandler(this.handleAlert.bind(this))
+        this.renderPage('login')
     }
 
     initBindingsAndEvents() {
