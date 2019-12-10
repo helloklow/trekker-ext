@@ -1,7 +1,16 @@
 class SignupPage extends PageManager {
     initBindingsAndEvents() {
         this.form = this.container.querySelector('#signup-form')
+        this.loginLink = this.container.querySelector('a#login')
+
         this.form.addEventListener('submit', this.handleSubmit.bind(this))
+        this.loginLink.addEventListener('click', this.handleLogin.bind(this))
+    }
+
+    handleLogin(e) {
+        e.preventDefault()
+        this.redirect('login')
+        
     }
 
     handleSubmit(e) {
@@ -18,9 +27,11 @@ class SignupPage extends PageManager {
 
     get staticHTML() {
         return (`
+        <h3 class="welcome">Welcome, Trekker!</h3>
+        <h4 class="welcome">Sign up to track your National Park adventures.</h4>
         <div id="signup-form" class="user-form">	
-		<h2>Create Account</h2>
         <form id="signup">
+        <h2>Create Account</h2>
         <div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -43,7 +54,7 @@ class SignupPage extends PageManager {
             <button type="submit" class="btn btn-primary btn-block btn-md">Sign Up</button>
         </div>
         </form>
-	    <div class="text-center">Already have an account? <a href="#">Login here</a></div>
+	    <div class="text-center">Already have an account? <a href="#" id="login">Login here</a></div>
         </div>
         `)
     }

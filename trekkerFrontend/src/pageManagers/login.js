@@ -1,26 +1,36 @@
-class LoginPage extends PageManager { // UPDATE FORM ID'S TO LOGIN!!! TWO CLASSES -> FORM and LOGIN / SIGNUP???
+class LoginPage extends PageManager {
     initBindingsAndEvents() {
         this.form = this.container.querySelector('#login-form')
-        this.form.addEventListener('submit', this.handleSubmit.bind(this))
+        this.signupLink = this.container.querySelector('a#signup')
+    
+        // this.form.addEventListener('submit', this.handleSubmit.bind(this))
+        this.signupLink.addEventListener('click', this.handleSignup.bind(this))
     }
 
-    handleSubmit(e) {
+    handleSignup(e) {
         e.preventDefault()
-        const inputs = Array.from(e.target.querySelectorAll('input'))
-        const [email, password] = inputs.map(input => input.value)
-        const params = {
-            user: {
-                email, password
-            }
-        }
-        this.loginAdapter.login(params)
+        this.redirect('signup')
     }
+
+    // handleSubmit(e) {
+    //     e.preventDefault()
+    //     const inputs = Array.from(e.target.querySelectorAll('input'))
+    //     const [email, password] = inputs.map(input => input.value)
+    //     const params = {
+    //         user: {
+    //             email, password
+    //         }
+    //     }
+    //     this.loginAdapter.login(params)
+    // }
 
     get staticHTML() {
         return (`
+        <h3 class="welcome">Welcome back, Trekker!</h3>
+        <h4 class="welcome">Login to add your latest adventure.</h4>  
         <div id="login-form" class="user-form">	
-		<h2>Login</h2>
         <form id="login">
+        <h2>Login</h2>
         <div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
@@ -37,7 +47,7 @@ class LoginPage extends PageManager { // UPDATE FORM ID'S TO LOGIN!!! TWO CLASSE
             <button type="submit" class="btn btn-primary btn-block btn-md">Login</button>
         </div>
         </form>
-	    <div class="text-center">New to Trekker? <a href="#">Create an Account</a></div>
+	    <div class="text-center">New to Trekker? <a href="#" id="signup">Create an Account</a></div>
         </div>
         `)
     }

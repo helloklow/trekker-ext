@@ -2,8 +2,13 @@ class App {
     constructor() {
         this.adapter = new BaseAdapter()
         this.initBindingsAndEvents()
-        this.renderPage(new SignupPage(this.pageContainer, this.adapter))
-        // this.renderPage(new LoginPage(this.pageContainer, this.adapter))
+        this.router = new Router({
+            'signup': new SignupPage(this.pageContainer, this.adapter),
+            'login': new LoginPage(this.pageContainer, this.adapter)
+            
+        })
+        this.router.assignCallback(this.pageManagerRedirect.bind(this))
+        this.renderPage('signup')
     }
 
     initBindingsAndEvents() {
@@ -14,9 +19,13 @@ class App {
         this.parksContainer = document.querySelector('#parks-container')
     }
 
+    pageManagerRedirect(page) { // Take page key from Router and renderPage
+        this.renderPage(page)
+    }
+
     // Render static HTML -> Update bindings and events -> Make any db calls -> Update page with dynamic HTML
     renderPage(page) {
-        page.render()
+        this.router.render(page)
     }
 
 }

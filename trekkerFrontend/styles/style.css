@@ -21,6 +21,13 @@ body {
     padding-bottom: 40px;
   }
 
+.welcome {
+    position: relative;
+    top: 70px;
+    text-align: center;
+    color: #636363;
+  }
+
 button:focus {
     outline: none;
   }
@@ -55,12 +62,7 @@ h5 {
   }
 
 /* USER FEATURES */
-  /* .welcome {
-    position: relative;
-    bottom: 100px;
-  }
-
-#search-form {
+  /* #search-form {
     width: 500px;
     margin: auto;
     margin-top: 50px;
@@ -209,7 +211,8 @@ input:focus {
     background: #fff;
 		border: 1px solid #f3f3f3;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+    padding: 20px;
+    padding-bottom: 7px;
   }
   
 	.user-form .form-group {
