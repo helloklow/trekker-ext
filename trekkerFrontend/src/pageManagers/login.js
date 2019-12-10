@@ -33,7 +33,7 @@ class LoginPage extends PageManager {
 
     get staticHTML() {
         return (`
-        <h3 class="welcome">Welcome back, Trekker!</h3>
+        <h3 class="welcome">Welcome back, Trekker</h3>
         <h4 class="welcome">Login to add your latest adventure.</h4>  
         <div id="login-form" class="user-form">	
         <form id="login">

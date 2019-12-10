@@ -13,10 +13,15 @@ class Router{
         this.routes[page].render()
     }
 
+    // assignRedirect(cb) {
+    //     this.assignCallback(cb, 'redirect')
+    // }
+
     assignCallback(cb) { // Router gives every page the cb 'redirect'
         for(let route in this.routes) { // Iterate through keys
             this.routes[route].redirect = cb // Assign cb to each route
         }
     }
+
 
 }

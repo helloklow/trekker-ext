@@ -6,7 +6,6 @@ class App {
             'signup': new SignupPage(this.pageContainer, this.adapter),
             'login': new LoginPage(this.pageContainer, this.adapter),
             'profile': new ProfilePage(this.pageContainer, this.adapter)
-            
         })
         this.router.assignCallback(this.pageManagerRedirect.bind(this))
         this.renderPage('signup')
@@ -16,7 +15,10 @@ class App {
         this.container = document.querySelector('#app-container')
         this.alertsContainer = document.querySelector('#alerts-container')
         this.pageContainer = document.querySelector('#page-container')
-        this.parksContainer = document.querySelector('#parks-container')
+    }
+
+    handleNotification(msg, type) {
+        
     }
 
     pageManagerRedirect(page) { // Take page key from Router and renderPage
