@@ -16,30 +16,24 @@ class BaseAdapter {
     }
 
     async checkStatus(resp) {
-        if (resp.status < 200 || resp.status > 299) {
-            const msg = await resp.json()
-            let errorMsg = msg.error.detail
-            if (!errorMsg) {errorMsg = msg.error}
-            throw new Error(errorMsg)
-        }
-        // if (resp.status == 401) { // Not authorized to see resource -> With no URLs, must mean token is blacklisted
-        //     this.token = null // Clear token and throw error
-        //     let msg = await resp.json() // change to const?
-        //     throw {
+        // if (resp.status === 401) { // Not authorized to see resource -> Without URLs, must mean token is blacklisted
+        //     this.token = null // Clear token 
+        //     const msg = await resp.json()
+        //     // throw new Error(msg.error.detail) -> returning obj obj***
+        //     throw { // This error type is caught in correlating page manager, clears token, and redirects to login
         //         type: 'Authorization Error',
-        //         msg: msg.error
+        //         msg: msg.error.details // msg.error???
         //     }
         // } else 
-        // if (resp.status < 200 || resp.status > 299) {
-        //     const msg = await resp.json()
-        //     let errorMsg = msg.error.detail
-        //     if (!errorMsg) {errorMsg = msg.error}
-        //     throw new Error(errorMsg)
-        //     throw {
-        //         type: 'Fetch Error',
-        //         msg: errorMsg
-        //     }
-        // }
+        if (resp.status < 200 || resp.status > 299) {
+            const msg = await resp.json()
+            let errorMsg = msg.error.detail || msg.error // try msg.errors???
+            throw new Error(errorMsg)
+            // throw { // This error type is caught and shows error msg
+            //     type: 'Fetch Error',
+            //     msg: errorMsg
+            // }
+        }
     }
 
 }
