@@ -23,7 +23,7 @@ class Router{
 
     assignCallback(cb, name) { // Router gives every page the cb 'redirect'
         for (let route in this.routes) { // Iterate through keys
-            this.routes[route][name] = cb // Assign cb to each route or redirect (as name)
+            this.routes[route][name] = cb // Dynamically ssign cb to each route or redirect (as name)
         }
     }
 

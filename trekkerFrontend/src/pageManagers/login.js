@@ -26,9 +26,9 @@ class LoginPage extends PageManager {
         try {
             await this.adapter.login(params) // If this works, redirect to...
             this.redirect('profile')
-            console.log(this.adapter.token)
+            // console.log(this.adapter.token) // Testing blacklisting after logout
         } catch(err) {
-            this.handleError(err) // If it doesn't work, error
+            this.handleAlert(err, 'danger') // If it doesn't work, error
         }
     }
 

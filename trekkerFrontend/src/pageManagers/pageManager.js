@@ -8,14 +8,14 @@ class PageManager {
         return null
     }
 
-    handleError(err) {
-        if (err.type === 'Authorization Error') {
-            this.handleAlert(err.msg)
-            this.redirect('login')
-        } else {
-            this.handleAlert(err)
-        }
-    }
+    // handleError(err) {
+    //     if (err.type === 'Authorization Error') {
+    //         this.handleAlert(err.msg)
+    //         this.redirect('login')
+    //     } else {
+    //         this.handleAlert(err)
+    //     }
+    // }
 
     render() {
         this.container.innerHTML = this.staticHTML // Render static HTML
