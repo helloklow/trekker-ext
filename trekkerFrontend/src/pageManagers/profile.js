@@ -5,13 +5,13 @@ class ProfilePage extends PageManager {
         // this.user = null
     }
 
-    get is_authenticated() {
-        return !!this.adapter.token
-    }
+    // get is_authenticated() {
+    //     return !!this.adapter.token
+    // }
 
     initBindingsAndEvents() {
         this.logoutBtn = this.container.querySelector('#logout-btn')
-        
+
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
 
@@ -21,12 +21,12 @@ class ProfilePage extends PageManager {
     }
 
     get staticHTML() {
-        if (this.is_authenticated) {    
+        // if (this.is_authenticated) {    
             return (`
                 <h2 class="welcome">Welcome, user</h2><br><br><br><br>
                 <button type="button" id="logout-btn" class="btn btn-primary btn-block btn-md">Logout</button>
             `)
-        }
+        // }
     }
 
 }

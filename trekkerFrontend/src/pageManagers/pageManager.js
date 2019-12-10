@@ -10,6 +10,7 @@ class PageManager {
 
     handleError(err) {
         if (err.type === 'Authorization Error') {
+            this.handleAlert(err.msg)
             this.redirect('login')
         } else {
             this.handleAlert(err)

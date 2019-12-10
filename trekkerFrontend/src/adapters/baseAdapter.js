@@ -18,13 +18,12 @@ class BaseAdapter {
     async checkStatus(resp) {
         if (resp.status == 401) { // Not authorized to see resource -> With no URLs, must mean token is blacklisted
             this.token = null // Clear token and throw error
-            const msg = await resp.json() 
+            let msg = await resp.json() // change to const?
             throw {
                 type: 'Authorization Error',
                 msg: msg.error
             }
-        }
-        else if (resp.status < 200 || resp.status > 299) {
+        } else if (resp.status < 200 || resp.status > 299) {
             const msg = await resp.json()
             let errorMsg = msg.error.detail
             if (!errorMsg) {errorMsg = msg.error}

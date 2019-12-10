@@ -1,16 +1,16 @@
 /* MAIN BODY & CONTAINER DISPLAY -> Remove unused fonts!!! */
 body {
-    font-family: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+  font-family: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
       sans-serif;
-    font-weight: 300;
-    background: #fcf4e8;
+  font-weight: 300;
+  background: #fcf4e8;
   }
 
 #app-container {
-    width: 1000px;
-    margin: auto;
-    position: relative;
-    bottom: 85px;
+  width: 1000px;
+  margin: auto;
+  position: relative;
+  bottom: 85px;
   }
 
 #alert-container {
@@ -20,21 +20,21 @@ body {
   text-align: center;
   width: 370px;
   line-height: 8px;
-}
+  }
 
 #logo {
-    position: relative;
-    height: 185px;
-    left: 425px;
-    top: 100px;
-    padding-bottom: 40px;
+  position: relative;
+  height: 185px;
+  left: 425px;
+  top: 100px;
+  padding-bottom: 40px;
   }
 
 .welcome { /* Update position of this text when window is widened! */
-    position: relative;
-    top: 70px;
-    text-align: center;
-    color: #636363;
+  position: relative;
+  top: 70px;
+  text-align: center;
+  color: #636363;
   }
 
 button:focus {
@@ -284,7 +284,7 @@ input:focus {
   position: fixed;
   top: 10px;
   right: 20px;
-}
+  }
 
 /* OLD OR UNUSED -> Remove if not needed!!! */
 /* #user-container {
