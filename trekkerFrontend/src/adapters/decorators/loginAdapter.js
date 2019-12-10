@@ -14,16 +14,15 @@ class LoginAdapter {
         return this.baseAdapter.headers
     }
 
-    // Perform login correctly -> UPDATE TO GET REQUEST???
-    // async login(params){
-    //     const resp = await fetch(`${this.baseURL}/login`, {
-    //         method: 'POST',
-    //         headers: this.headers,
-    //         body: JSON.stringify(params)
-    //     })
-    //     this.baseAdapter.checkStatus(resp) // Either get error
-    //     this.baseAdapter.token = resp.headers.get('authorization').split(' ')[1] // Or set base's token
-    //     console.log(this.baseAdapter.token)
-    // }
+    // Perform login correctly
+    async login(params){
+        const resp = await fetch(`${this.baseURL}/login`, {
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify(params)
+        })
+        await this.baseAdapter.checkStatus(resp)
+        this.baseAdapter.token = res.headers.get('authorization').split(' ')[1]
+    }
 
 }

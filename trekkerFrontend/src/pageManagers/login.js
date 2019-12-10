@@ -3,7 +3,7 @@ class LoginPage extends PageManager {
         this.form = this.container.querySelector('#login-form')
         this.signupLink = this.container.querySelector('a#signup')
     
-        // this.form.addEventListener('submit', this.handleSubmit.bind(this))
+        this.form.addEventListener('submit', this.handleSubmit.bind(this))
         this.signupLink.addEventListener('click', this.handleSignup.bind(this))
     }
 
@@ -12,17 +12,14 @@ class LoginPage extends PageManager {
         this.redirect('signup')
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault()
-    //     const inputs = Array.from(e.target.querySelectorAll('input'))
-    //     const [email, password] = inputs.map(input => input.value)
-    //     const params = {
-    //         user: {
-    //             email, password
-    //         }
-    //     }
-    //     this.loginAdapter.login(params)
-    // }
+    handleSubmit(e) {
+        e.preventDefault()
+        const [email, password] = Array.from(e.target.querySelectorAll('input')).map(i => i.value) // Grab inputs in arr and map value
+        const params = {
+            user: {email, password}
+        }
+        this.adapter.login(params) // Gets set in PageManager
+    }
 
     get staticHTML() {
         return (`

@@ -15,8 +15,7 @@ class SignupPage extends PageManager {
 
     handleSubmit(e) {
         e.preventDefault()
-        const inputs = Array.from(e.target.querySelectorAll('input'))
-        const [username, email, password] = inputs.map(input => input.value)
+        const [username, email, password] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
         const params = {
             user: {
                 username, email, password

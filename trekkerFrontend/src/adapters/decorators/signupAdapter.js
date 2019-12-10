@@ -21,7 +21,7 @@ class SignupAdapter {
             headers: this.headers,
             body: JSON.stringify(params)
         })
-        this.baseAdapter.checkStatus(resp) // Either get error
+        await this.baseAdapter.checkStatus(resp) // Either get error
         this.baseAdapter.token = resp.headers.get('authorization').split(' ')[1] // Or set base's token
         console.log(this.baseAdapter.token)
     }
