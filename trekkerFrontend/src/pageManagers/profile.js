@@ -11,7 +11,7 @@ class ProfilePage extends PageManager {
 
     get staticHTML() {
         return (`
-        <h2 class="welcome">Welcome, user!</h2>
+        <h2 class="welcome">Welcome, user</h2>
         `)
     }
 

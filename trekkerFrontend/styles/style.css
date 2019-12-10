@@ -13,6 +13,12 @@ body {
     bottom: 85px;
   }
 
+#alert-container {
+  position: relative;
+  top: 75px;
+  line-height: 0px;
+}
+
 #logo {
     position: relative;
     height: 185px;

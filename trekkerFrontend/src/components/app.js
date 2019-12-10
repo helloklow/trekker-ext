@@ -2,6 +2,7 @@ class App {
     constructor() {
         this.adapter = new BaseAdapter()
         this.initBindingsAndEvents()
+        this.alertManager = new Alert(this.alertContainer)
         this.router = new Router({
             'signup': new SignupPage(this.pageContainer, this.adapter),
             'login': new LoginPage(this.pageContainer, this.adapter),
@@ -9,16 +10,17 @@ class App {
         })
         this.router.assignCallback(this.pageManagerRedirect.bind(this))
         this.renderPage('signup')
+        this.handleAlert('Hello World', 'danger')
     }
 
     initBindingsAndEvents() {
         this.container = document.querySelector('#app-container')
-        this.alertsContainer = document.querySelector('#alerts-container')
+        this.alertContainer = document.querySelector('#alert-container')
         this.pageContainer = document.querySelector('#page-container')
     }
 
-    handleNotification(msg, type) {
-        
+    handleAlert(msg, type, timeout = 5000) {
+        this.alertManager.render(msg, type, timeout)
     }
 
     pageManagerRedirect(page) { // Take page key from Router and renderPage
