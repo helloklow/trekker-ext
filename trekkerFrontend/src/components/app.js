@@ -10,7 +10,7 @@ class App {
         })
         this.router.assignRedirect(this.pageManagerRedirect.bind(this))
         this.router.assignAlertHandler(this.handleAlert.bind(this))
-        this.renderPage('login')
+        this.renderPage('signup')
     }
 
     initBindingsAndEvents() {
