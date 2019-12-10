@@ -1,4 +1,9 @@
 class LoginPage extends PageManager {
+    constructor(container, adapter) {
+        super(container)
+        this.adapter = new LoginAdapter(adapter) // Set up adapter for itself
+    }
+
     initBindingsAndEvents() {
         this.form = this.container.querySelector('#login-form')
         this.signupLink = this.container.querySelector('a#signup')

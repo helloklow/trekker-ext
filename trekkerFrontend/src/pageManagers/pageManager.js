@@ -1,7 +1,6 @@
 class PageManager {
-    constructor(container, adapter) {
+    constructor(container) {
         this.container = container 
-        
     }
 
     // If there's nothing to fetch in child class, render will fill method with null and avoid erroring

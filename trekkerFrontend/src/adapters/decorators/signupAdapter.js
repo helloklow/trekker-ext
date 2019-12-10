@@ -23,7 +23,6 @@ class SignupAdapter {
         })
         await this.baseAdapter.checkStatus(resp) // Either get error
         this.baseAdapter.token = resp.headers.get('authorization').split(' ')[1] // Or set base's token
-        console.log(this.baseAdapter.token)
     }
 
 }
