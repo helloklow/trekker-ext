@@ -10,6 +10,10 @@ class ProfileAdapter {
         return this.baseAdapter.token
     }
 
+    set token(nullifyToken) {
+        this.baseAdapter.token = nullifyToken
+    }
+
     get headers() {
         return this.baseAdapter.headers
     }
