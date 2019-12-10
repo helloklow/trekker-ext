@@ -194,12 +194,12 @@ input:focus {
   }
 
 /* LOGIN & SIGNUP FORMS */
-  .form-control, .form-control:focus, .input-group-addon {
+.form-control, .form-control:focus, .input-group-addon {
 		border-color: #e1e1e1;
     border-radius: 0;
   }
   
-	.user-form {
+.user-form {
     position: absolute;
     left: 315px;
 		width: 370px;
@@ -207,14 +207,14 @@ input:focus {
     padding: 95px 0;
   }
   
-	.user-form h2 {
+.user-form h2 {
 		color: #636363;
     margin: 0 0 15px;
     font-size: 2rem;
 		text-align: center;
   }
  
-  .user-form form {		
+.user-form form {		
 		border-radius: 1px;
     margin-bottom: 15px;
     background: #fff;
@@ -224,58 +224,67 @@ input:focus {
     padding-bottom: 7px;
   }
   
-	.user-form .form-group {
+.user-form .form-group {
 		margin-bottom: 20px;
   }
   
-	.user-form label {
+.user-form label {
 		font-weight: normal;
 		font-size: 13px;
   }
   
-	.user-form .form-control {
+.user-form .form-control {
 		min-height: 38px;
 		box-shadow: none !important;
 		border-width: 0 0 1px 0;
   }	
   
-	.user-form .input-group-addon {
+.user-form .input-group-addon {
 		max-width: 42px;
 		text-align: center;
 		background: none;
 		border-width: 0 0 1px 0;
 		padding-left: 5px;
-	}
-  .user-form .btn {        
+  }
+  
+.btn {        
     font-size: 16px;
     font-weight: bold;
 		background: #19aa8d;
     border-radius: 3px;
 		border: none;
-		min-width: 140px;
+    width: 150px;
+    margin-left: 90px;
     outline: none !important;
   }
 
-	.user-form .btn:hover, .user-form .btn:focus {
+.btn:hover, .btn:focus {
 		background: #179b81;
   }
   
-	.user-form a {
+.user-form a {
 		color: #19aa8d;
 		text-decoration: none;
   }	
   
-	.user-form a:hover {
+.user-form a:hover {
 		text-decoration: underline;
   }
   
-	.user-form .fa {
+.user-form .fa {
 		font-size: 16px;
   }
   
-	.user-form .fa-paper-plane {
+.user-form .fa-paper-plane {
 		font-size: 12px;
-	}
+  }
+  
+/* LOGOUT BUTTON */
+#logout-btn {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
 
 /* OLD OR UNUSED -> Remove if not needed!!! */
 /* #user-container {

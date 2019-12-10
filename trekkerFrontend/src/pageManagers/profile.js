@@ -5,14 +5,28 @@ class ProfilePage extends PageManager {
         // this.user = null
     }
 
+    get is_authenticated() {
+        return !!this.adapter.token
+    }
+
     initBindingsAndEvents() {
-        return null
+        this.logoutBtn = this.container.querySelector('#logout-btn')
+        
+        this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
+    }
+
+    handleLogout(e) {
+        e.preventDefault()
+        this.redirect('login')
     }
 
     get staticHTML() {
-        return (`
-        <h2 class="welcome">Welcome, user</h2>
-        `)
+        if (this.is_authenticated) {    
+            return (`
+                <h2 class="welcome">Welcome, user</h2><br><br><br><br>
+                <button type="button" id="logout-btn" class="btn btn-primary btn-block btn-md">Logout</button>
+            `)
+        }
     }
 
 }
