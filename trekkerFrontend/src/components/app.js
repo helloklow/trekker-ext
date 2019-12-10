@@ -15,7 +15,6 @@ class App {
     initBindingsAndEvents() {
         this.container = document.querySelector('#app-container')
         this.alertsContainer = document.querySelector('#alerts-container')
-        this.navbarContainer = document.querySelector('#navbar-container')
         this.pageContainer = document.querySelector('#page-container')
         this.parksContainer = document.querySelector('#parks-container')
     }
