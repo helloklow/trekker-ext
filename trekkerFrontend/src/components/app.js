@@ -4,7 +4,8 @@ class App {
         this.initBindingsAndEvents()
         this.router = new Router({
             'signup': new SignupPage(this.pageContainer, this.adapter),
-            'login': new LoginPage(this.pageContainer, this.adapter)
+            'login': new LoginPage(this.pageContainer, this.adapter),
+            'profile': new ProfilePage(this.pageContainer, this.adapter)
             
         })
         this.router.assignCallback(this.pageManagerRedirect.bind(this))

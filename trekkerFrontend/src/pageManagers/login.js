@@ -17,13 +17,18 @@ class LoginPage extends PageManager {
         this.redirect('signup')
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault()
         const [email, password] = Array.from(e.target.querySelectorAll('input')).map(i => i.value) // Grab inputs in arr and map value
         const params = {
             user: {email, password}
         }
-        this.adapter.login(params) // Gets set in PageManager
+        try {
+            await this.adapter.login(params) // If this works, redirect to...
+            this.redirect('signup')
+        } catch(err) {
+            alert(err) // If it doesn't work, error
+        }
     }
 
     get staticHTML() {

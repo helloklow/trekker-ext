@@ -18,7 +18,7 @@ class SignupPage extends PageManager {
         
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault()
         const [username, email, password] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
         const params = {
@@ -26,7 +26,12 @@ class SignupPage extends PageManager {
                 username, email, password
             }
         }
-        this.adapter.signup(params)
+        try {
+            await this.adapter.signup(params) // If this works, redirect to...
+            this.redirect('login')
+        } catch(err) {
+            alert(err) // If it doesn't work, error
+        }
     }
 
     get staticHTML() {
