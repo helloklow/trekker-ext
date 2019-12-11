@@ -18,14 +18,18 @@ class BaseAdapter {
     async checkStatus(resp) {
         if (resp.status == 401) {
             const msg = await resp.json()
-            // console.log(this.token) -> Already null, no need to set?
-            throw new Error(msg.error)
+            this.token = null
+            // console.log(msg.error) // Shows correct error! 
+            let errorMsg = msg.error.value
+            if (!errorMsg) {errorMsg = msg.error}
+            throw new Error(errorMsg)
         } else if (resp.status < 200 || resp.status > 299) {
             const msg = await resp.json()
             let errorMsg = msg.error.detail
             if (!errorMsg) {errorMsg = msg.error}
             throw new Error(errorMsg)
         }
+        console.log(resp.status)
     }
 
-}
+} 

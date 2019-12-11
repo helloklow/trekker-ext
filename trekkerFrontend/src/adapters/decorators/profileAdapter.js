@@ -20,6 +20,7 @@ class ProfileAdapter {
 
     async getParks() {
         const resp = await fetch(`${this.baseURL}/parks`, {
+            headers: {'Accept': 'application/json'}
             // headers: this.headers // Get dogs with auth token from headers
         })
         this.baseAdapter.checkStatus(resp)
