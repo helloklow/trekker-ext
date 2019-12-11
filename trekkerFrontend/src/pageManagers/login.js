@@ -28,7 +28,6 @@ class LoginPage extends PageManager {
             this.redirect('profile')
         } catch(err) {
             this.handleError(err)
-            // this.handleAlert(err, 'danger') // If it doesn't work, error
         }
     }
 

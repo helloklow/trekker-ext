@@ -4,14 +4,12 @@ class VisitsController < ApplicationController
     def index
         visits = current_user.visits
         render json: visits.to_json(include: [:park])
-        # removed -> , except: [:created_at, :updated_at]
     end
 
     def show
         visit = Visit.find(params[:id])
         authorize_user_resource(visit)
         render_resource(visit, with: [:park])
-        # removed -> , except: [:created_at, :updated_at]
     end
 
     def create 
