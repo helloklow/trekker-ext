@@ -23,7 +23,7 @@ class ProfileAdapter {
             headers: {'Accept': 'application/json'}
             // headers: this.headers // Get dogs with auth token from headers
         })
-        this.baseAdapter.checkStatus(resp)
+        await this.baseAdapter.checkStatus(resp)
         return await resp.json()
     }
     

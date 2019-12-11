@@ -10,7 +10,7 @@ class ProfilePage extends PageManager {
             const parks = await this.adapter.getParks()
             this.container.innerHTML = parks.map(p => p.name).join(', ')
         } catch(err) {
-            this.handleAlert(err, 'danger')
+            this.handleError(err)
         }
     }
 
@@ -28,7 +28,7 @@ class ProfilePage extends PageManager {
         e.preventDefault()
         this.redirect('login')
         this.adapter.token = null
-        console.log(this.adapter.token)
+        // console.log(this.adapter.token)
     }
 
     get staticHTML() {
