@@ -9,13 +9,12 @@ class PageManager {
     }
 
     handleError(err) {
-        this.handleAlert(err)
-        // if (err.value === 401) { -> Redirect won't work!
-        //     this.handleAlert(err.msg)
-        //     this.redirect('login')
-        // } else {
-        //     this.handleAlert(err)
-        // }
+        if (err.status === 401) { 
+            this.handleAlert(err)
+            this.redirect('login') // Redirect won't work, status not included w invalid email/pass and unauth login errors
+        } else {
+            this.handleAlert(err)
+        }
     }
 
     render() {
