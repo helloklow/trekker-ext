@@ -5,6 +5,15 @@ class ProfilePage extends PageManager {
         // this.user = null
     }
 
+    async fetchAndRenderPageResources() {
+        try {
+            const parks = await this.adapter.getParks()
+            this.container.innerHTML = parks.map(p => p.name).join(', ')
+        } catch(err) {
+            this.handleAlert(err, 'danger')
+        }
+    }
+
     get is_authenticated() {
         return !!this.adapter.token
     }
@@ -17,11 +26,9 @@ class ProfilePage extends PageManager {
 
     handleLogout(e) {
         e.preventDefault()
-        // this.adapter.token = nil // Doesn't work...
         this.redirect('login')
         this.adapter.token = null
         console.log(this.adapter.token)
-        // console.log(this.adapter.token) // How to blacklist token???
     }
 
     get staticHTML() {

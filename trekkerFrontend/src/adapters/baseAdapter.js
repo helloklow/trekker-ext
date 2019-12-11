@@ -5,7 +5,7 @@ class BaseAdapter {
     }
 
     get headers() {
-        const baseHeaders = {
+        let baseHeaders = {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
