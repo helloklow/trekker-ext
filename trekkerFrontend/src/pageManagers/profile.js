@@ -7,8 +7,8 @@ class ProfilePage extends PageManager {
 
     async fetchAndRenderPageResources() {
         try {
-            const parks = await this.adapter.getParks()
-            this.container.innerHTML = parks.map(p => p.name).join(', ')
+            const userObj = await this.adapter.getUser()
+            const user = new User(userObj)
         } catch(err) {
             this.handleError(err)
         }
