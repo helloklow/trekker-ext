@@ -20,7 +20,7 @@ class App {
         this.pageContainer = document.querySelector('#page-container')
     }
 
-    handleAlert(msg, type, timeout = 5000) {
+    handleAlert(msg, type = 'danger', timeout = 5000) {
         this.alertManager.render(msg, type, timeout)
     }
 

@@ -9,12 +9,13 @@ class PageManager {
     }
 
     handleError(err) {
-        if (err.status == 401) {
-            this.handleAlert(err.msg)
-            this.redirect('login')
-        } else {
-            this.handleAlert(err, 'danger')
-        }
+        this.handleAlert(err)
+        // if (err.value === 401) { -> Redirect won't work!
+        //     this.handleAlert(err.msg)
+        //     this.redirect('login')
+        // } else {
+        //     this.handleAlert(err)
+        // }
     }
 
     render() {
