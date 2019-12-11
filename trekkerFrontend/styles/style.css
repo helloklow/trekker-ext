@@ -137,7 +137,7 @@ input:focus {
   }
   
 /* VISITED CARD DISPLAY */
-.visited-card {
+.visit-card {
     float: left;
     width: 240px;
     height: 250px;
@@ -149,6 +149,20 @@ input:focus {
     color: #000000;
   }
   
+.visit-summary {
+    visibility: hidden; 
+    float: left;
+    cursor: pointer;
+    font-size: 0.7rem;
+    width: 210px;
+    height: 190px;
+    padding-left: 17px;
+    position: absolute;
+    top: 40px;
+    background: #bddebd;
+    color: #000000;
+  }
+
 .visited-icon {
     background-image: url('images/green-icon.png');
     background-repeat: no-repeat;
@@ -161,20 +175,6 @@ input:focus {
     margin: 4px;
     border: 3px solid #bddebd;
     background-color: #bddebd;
-  }
-  
-.visited-summary {
-    visibility: hidden; 
-    float: left;
-    cursor: pointer;
-    font-size: 0.7rem;
-    width: 210px;
-    height: 190px;
-    padding-left: 17px;
-    position: absolute;
-    top: 40px;
-    background: #bddebd;
-    color: #000000;
   }
   
 .remove-btn {

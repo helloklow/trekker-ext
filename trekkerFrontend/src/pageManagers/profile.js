@@ -34,7 +34,6 @@ class ProfilePage extends PageManager {
     get staticHTML() {
         if (this.is_authenticated) {   
             return (`
-                <h2 class="welcome">Welcome, user</h2><br><br><br><br>
                 <button type="button" id="logout-btn" class="btn btn-primary btn-block btn-md">Logout</button>
             `)
         }
