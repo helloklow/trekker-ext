@@ -2,13 +2,14 @@ class ProfilePage extends PageManager {
     constructor(container, adapter) {
         super(container)
         this.adapter = new ProfileAdapter(adapter) // Set up adapter for itself
-        // this.user = null
+        this.user = null
     }
 
     async fetchAndRenderPageResources() {
         try {
             const userObj = await this.adapter.getUser()
-            const user = new User(userObj)
+            this.user = new User(userObj)
+            this.renderUser()
         } catch(err) {
             this.handleError(err)
         }
@@ -20,7 +21,6 @@ class ProfilePage extends PageManager {
 
     initBindingsAndEvents() {
         this.logoutBtn = this.container.querySelector('#logout-btn')
-
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
 
@@ -38,5 +38,10 @@ class ProfilePage extends PageManager {
             `)
         }
     }
+
+    renderUser() {
+        this.container.innerHTML = this.user.profileHTML
+    }
+
 
 }

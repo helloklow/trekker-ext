@@ -1,5 +1,5 @@
 class ParksController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :authenticate_user!
 
     def index
         parks = Park.all 

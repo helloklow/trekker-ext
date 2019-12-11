@@ -7,7 +7,7 @@ class Visit {
         this.user_id = user_id
     }
 
-    get visitHTML() {
+    get visitCardHTML() {
         return (`
             <div id='visit-card' class='visit-card'>
                 <h4 class='center-text'>${this.name}</h4>

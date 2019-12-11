@@ -9,7 +9,7 @@ class Park {
         this.pic = pic
     }
 
-    get parkHTML() {
+    get parkCardHTML() {
         return (`
             <div id='park-card' class='park-card'>
                 <h4 class='center-text'>${this.name}</h4>
