@@ -17,6 +17,10 @@ class ProfileAdapter {
     get headers() {
         return this.baseAdapter.headers
     }
+
+    async getParks() {
+        
+    }
     
     // async login(params){
     //     const resp = await fetch(`${this.baseURL}/login`, {
