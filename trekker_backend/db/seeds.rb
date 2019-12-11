@@ -6,9 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Park.destroy_all
-Visit.destroy_all
+# User.destroy_all
+# Park.destroy_all
+# Visit.destroy_all
+
+require 'database_cleaner'
+DatabaseCleaner.clean_with(:truncation)
 
 roamer = User.create(username: "roamer", email: "roamer@email.com", password: "roamer")
 scout = User.create(username: "scout", email: "scout@email.com", password: "scout")

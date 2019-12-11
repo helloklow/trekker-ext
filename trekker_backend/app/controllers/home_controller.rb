@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
     def profile
         user = current_user
-        render_resource(user, with: [:parks, :visits]) # just visits ???
+        render_resource(user, with: [:visits, :parks])
     end
 
 end
