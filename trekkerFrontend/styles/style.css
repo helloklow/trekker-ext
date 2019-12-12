@@ -120,7 +120,7 @@ input:focus {
     visibility: hidden; 
     cursor: pointer;
     float: left;
-    font-size: 1.1rem;
+    font-size: 1.13rem;
     line-height: 13px;
     width: 230px;
     height: 200px;
@@ -139,10 +139,10 @@ input:focus {
     height: 30px;
     width: 30px;
     position: absolute;
-    right: 3px;
+    right: 2px;
     bottom: 3px;
-    margin: 4px;
-    border: 3px solid #f9e9d2;
+    margin: 3px;
+    border: 1px solid #f9e9d2;
     background-color: #f9e9d2;
   }
   
@@ -180,10 +180,10 @@ input:focus {
     height: 30px;
     width: 30px;
     position: absolute;
-    right: 3px;
+    right: 2px;
     bottom: 3px;
-    margin: 4px;
-    border: 3px solid #bddebd;
+    margin: 2px;
+    border: 1px solid #bddebd;
     background-color: #bddebd;
   }
   
