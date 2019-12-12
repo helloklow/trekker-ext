@@ -15,6 +15,7 @@ class Visit {
         console.log(parks)
     }
 
+    // Need to render in separate div or append to all park cards!
     get visitCardHTML() {
         // return (`
         //     <div id='visit-card' class='visit-card'>

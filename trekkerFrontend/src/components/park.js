@@ -9,6 +9,24 @@ class Park {
         this.pic = pic
     }
 
+    // Need to fire after parkCardHTML is dynamically rendered
+    cardBindingsAndEvents() {
+        // this.container = document.querySelector('#page-container')
+        // this.card = document.querySelector('#park-card')
+        // this.visitIcon = this.card.querySelector('#visit-icon')
+        // this.visitIcon.addEventListener
+        document.body.addEventListener('click', (e) => {
+            if (e.target.class == 'visit-icon') {
+                console.log('hello??')
+                // this.renderVisitForm.bind(this)
+            }
+        })
+    }
+
+    renderVisitForm(e) {
+        console.log('hellooooooooo')
+    }
+
     get parkCardHTML() {
         return (`
             <div id='park-card' class='park-card'>
@@ -25,13 +43,3 @@ class Park {
 
 
 }
-
-{/* <div id='park-card' class='park-card'>
-                <h4 class='center-text'>${this.name}</h4>
-                <p class='small-text'>${this.location}, est. ${this.est}</p>
-                <div id='park-details'> 
-                    <img class='park-pic' data-name='${this.name}' data-action='toggle-summary' src='${this.pic}'>
-                    <p class='park-summary' data-name='${this.name}' data-action='toggle-summary'>${this.summary}</p>
-                <button class='visit-icon' data-name='${this.name}' data-action='visit-icon' alt='Visit'></button>
-                </div>                  
-            </div> */}

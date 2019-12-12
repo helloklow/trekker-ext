@@ -14,9 +14,10 @@ class App {
     }
 
     initBindingsAndEvents() {
-        this.container = document.querySelector('#app-container')
         this.alertContainer = document.querySelector('#alert-container')
         this.pageContainer = document.querySelector('#page-container')
+        // this.visitsContainer = document.querySelector('#visits-container')
+        // this.parksContainer = document.querySelector('#parks-container')
     }
 
     handleAlert(msg, type = 'danger', timeout = 5000) {
