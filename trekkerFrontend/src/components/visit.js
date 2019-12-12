@@ -15,6 +15,7 @@ class Visit {
 
     // Need to get visited parks to display park info in visited cards!
     get renderVisitCards() {
+        console.log(this.parkName)
         // if (this.park_id === park_id) { // ***
             // Need to match this.park_id with all parks id, then change those cards!
         // }

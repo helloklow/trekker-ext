@@ -24,7 +24,7 @@ class ApplicationController < ActionController::API
     end
 
     def authorize_user_resource(resource)
-      raise AuthorizationError.new if resource.user ≠ current_user
+      raise AuthorizationError.new if resource.user != current_user
     end
 
     def unauthorized_error

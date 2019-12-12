@@ -23,7 +23,7 @@ class ProfilePage extends PageManager {
         try {
             const userObj = await this.profileAdapter.getUser()
             this.user = new User(userObj)
-            this.renderUser()
+            this.renderUserVisits()
         } catch(err) {
             this.handleError(err)
         }
@@ -64,8 +64,8 @@ class ProfilePage extends PageManager {
     }
 
     // Along with logout button, needs to render without being rendered over!! ??
-    renderUser() {
-        this.container.innerHTML = this.user.profileHTML
+    renderUserVisits() {
+        this.container.innerHTML = this.user.userVisitsHTML
     }
 
     renderParks() {
