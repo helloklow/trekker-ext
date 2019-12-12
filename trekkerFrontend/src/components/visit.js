@@ -15,9 +15,9 @@ class Visit {
 
     // Need to get visited parks to display park info in visited cards!
     get renderVisitCards() {
-        if (this.park_id === park_id) { // ***
+        // if (this.park_id === park_id) { // ***
             // Need to match this.park_id with all parks id, then change those cards!
-        }
+        // }
     }
 
     // Need to render in separate div or append to all park cards!

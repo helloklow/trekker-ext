@@ -9,13 +9,13 @@ class User {
     }
 
     // Can I use these methods to make visit and park objs available to the visit class?
-    // get userVisits() {
-    //     return this.visits
-    // }
+    get userVisits() {
+        return this.visits
+    }
 
-    // get userParks() {
-    //     return this.parks
-    // }
+    get userParks() {
+        return this.parks
+    }
 
     get profileHTML() {
         console.log(this.userVisits)
