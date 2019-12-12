@@ -7,24 +7,37 @@ class Park {
         this.est = est
         this.summary = summary 
         this.pic = pic
+        this.cardBindingsAndEvents()
     }
 
     // Need to fire after parkCardHTML is dynamically rendered
     cardBindingsAndEvents() {
-        // this.container = document.querySelector('#page-container')
-        // this.card = document.querySelector('#park-card')
-        // this.visitIcon = this.card.querySelector('#visit-icon')
-        // this.visitIcon.addEventListener
-        document.body.addEventListener('click', (e) => {
-            if (e.target.class == 'visit-icon') {
-                console.log('hello??')
-                // this.renderVisitForm.bind(this)
+        this.container = document.querySelector('#page-container')
+        this.container.addEventListener('click', (e) => {
+            if (e.target && e.target.className === 'visit-icon') {
+                // console.log(e.target.dataset.id)
+                this.renderVisitForm(e)
             }
         })
+        this.container.onmouseover = this.container.onmouseout = this.toggleSummary
+    }
+
+    toggleSummary(e) {
+        if (e.target.dataset.action === 'toggle-summary') {
+            const img = e.target
+            const summary = e.target.parentNode.children[1]
+            if (e.type === 'mouseover') {
+                img.style.visibility = 'hidden'
+                summary.style.visibility = 'visible'
+            } else if (e.type === 'mouseout') {
+                img.style.visibility = 'visible'
+                summary.style.visibility = 'hidden'
+            }
+        }
     }
 
     renderVisitForm(e) {
-        console.log('hellooooooooo')
+        console.log(e.target.parentNode)
     }
 
     get parkCardHTML() {
