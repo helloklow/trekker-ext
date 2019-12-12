@@ -10,13 +10,12 @@ class Visit {
     }
 
     // Need to get visited parks to display park info in visited cards!
-    visitParks() {
-        const parks = user.visitedParks()
-        console.log(parks)
+    get renderVisitCards() {
+        console.log('made it')
     }
 
     // Need to render in separate div or append to all park cards!
-    get visitCardHTML() {
+    // get visitCardHTML() {
         // return (`
         //     <div id='visit-card' class='visit-card'>
         //         <h4 class='center-text'>${this.name}</h4>
@@ -29,7 +28,7 @@ class Visit {
         //     </div>                  
         //     </div>
         // `)
-    }
+    // }
 
 
 }

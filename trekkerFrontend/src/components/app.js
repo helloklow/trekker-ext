@@ -24,7 +24,8 @@ class App {
         this.alertManager.render(msg, type, timeout)
     }
 
-    pageManagerRedirect(page) { // Take page key from Router and renderPage
+    // Take page key from Router and renderPage
+    pageManagerRedirect(page) { 
         this.renderPage(page)
     }
 

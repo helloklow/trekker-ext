@@ -7,6 +7,16 @@ class ProfilePage extends PageManager {
         this.memoizedParks = []
     }
 
+    initBindingsAndEvents() {
+        return null
+    }
+
+    // Create and move to header container so it isn't rendered over?? !!
+    logoutBindingsAndEvents() {
+        this.logoutBtn = this.container.querySelector('#logout-btn')
+        this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
+    }
+
     async fetchAndRenderPageResources() {
         try {
             const userObj = await this.profileAdapter.getUser()
@@ -28,12 +38,6 @@ class ProfilePage extends PageManager {
         return !!this.profileAdapter.token
     }
 
-    // Create and move to header container so it isn't rendered over??
-    initBindingsAndEvents() {
-        this.logoutBtn = this.container.querySelector('#logout-btn')
-        this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
-    }
-
     handleLogout(e) {
         e.preventDefault()
         this.redirect('login')
@@ -49,6 +53,7 @@ class ProfilePage extends PageManager {
         }
     }
 
+    // Along with logout button, needs to render without being rendered over!! ??
     renderUser() {
         this.container.innerHTML = this.user.profileHTML
     }

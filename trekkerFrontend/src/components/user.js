@@ -15,16 +15,9 @@ class User {
     get profileHTML() {
         return (`
             <h2 class="welcome">Welcome, ${this.username}</h2><br><br>
-            ${this.visits.map(v => v.visitCardHTML).join('')}
+            ${this.visits.map(v => v.renderVisitCards).join('')}
         `)
     }
 
 
 }
-
-{/* <div id="visits-container>
-                ${this.visits.map(v => v.visitCardHTML).join('')}
-            </div>
-            <div id="parks-container>
-                ${this.parks.map(p => p.parkCardHTML).join('')}
-            </div> */}

@@ -25,6 +25,7 @@ class Park {
         e.preventDefault()
         e.stopImmediatePropagation()
         console.log(e.target.dataset.id)
+        // How do I render visit form?
     }
 
     toggleSummary(e) {
