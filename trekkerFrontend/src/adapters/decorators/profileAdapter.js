@@ -23,10 +23,8 @@ class ProfileAdapter {
             // headers: {'Accept': 'application/json'}
             headers: this.headers // Get user with auth token from headers
         })
-        console.log(resp)
         await this.baseAdapter.checkStatus(resp)
         return await resp.json()
-    }
-    
+    } 
 
 }

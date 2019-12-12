@@ -10,19 +10,17 @@ class Park {
         // this.adapter = new ParksAdapter()
     }
 
-    get parkVisitHTML() {
+    get parkCardHTML() {
         return (`
-            <div id='visit-card' class='visit-card'>
+            <div id='park-card' class='park-card'>
                 <h4 class='center-text'>${this.name}</h4>
                 <p class='small-text'>${this.location}, est. ${this.est}</p>
                 <div id='park-details'> 
-                    <img class='park-pic' data-name='${this.name}' data-action='toggle-summary' src='${this.pic}'>
-                    <p class='visit-summary' data-name='${this.name}' data-action='toggle-summary'>${this.summary}</p>
-                <button class='visited-icon' data-name='${this.name}' data-action='visit-icon' alt='Visit'></button>
-                <button class='remove-btn' data-name='${this.name}' data-action='remove-btn' alt='Remove'></button>
+                    <img class='park-pic' data-id='${this.id}' data-action='toggle-summary' src='${this.pic}'>
+                    <p class='park-summary' data-id='${this.id}' data-action='toggle-summary'>${this.summary}</p>
+                <button class='visit-icon' data-id='${this.id}' data-action='visit-icon' alt='Visit'></button>
                 </div>                  
             </div>
-            
         `)
     }
 

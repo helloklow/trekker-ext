@@ -15,21 +15,21 @@ class ProfilePage extends PageManager {
         } catch(err) {
             this.handleError(err)
         }
-        try { // probably won't work!
-            const parkArr = await this.parksAdapter.getParks()
-            return await parkArr.forEach(p => this.memoizedParks.push(new Park(p)))
+        try {
+            const parkObjs = await this.parksAdapter.getParks()
+            parkObjs.map(p => this.memoizedParks.push(new Park(p)))
+            this.renderParks()
             console.log(this.memoizedParks)
-            //this.parks = new Park(parkArr)
-            // this.renderParks()
         } catch(err) {
             this.handleError(err)
         }
     }
 
     get is_authenticated() {
-        return !!this.adapter.token
+        return !!this.profileAdapter.token
     }
 
+    // Create and move to header container so it isn't rendered over??
     initBindingsAndEvents() {
         this.logoutBtn = this.container.querySelector('#logout-btn')
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
@@ -38,8 +38,8 @@ class ProfilePage extends PageManager {
     handleLogout(e) {
         e.preventDefault()
         this.redirect('login')
-        this.adapter.token = null
-        // console.log(this.adapter.token)
+        this.profileAdapter.token = null
+        // console.log(this.profileAdapter.token)
     }
 
     get staticHTML() {
@@ -52,6 +52,11 @@ class ProfilePage extends PageManager {
 
     renderUser() {
         this.container.innerHTML = this.user.profileHTML
+    }
+
+    renderParks() {
+        this.container.innerHTML = this.memoizedParks.map(p => p.name).join(', ')
+        // this.container.innerHTML = this.memoizedParks.map(p => p.parkCardHTML()).join('')
     }
 
 
