@@ -9,7 +9,7 @@ class VisitsController < ApplicationController
     def show
         visit = Visit.find(params[:id])
         authorize_user_resource(visit)
-        render_resource(visit, with: [:parks])
+        render_resource(visit, with: [:user, :parks])
     end
 
     def create 

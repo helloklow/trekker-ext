@@ -8,6 +8,10 @@ class User {
         this.parks = parks.map(p => new Park(p))
     }
 
+    get visitedParks() {
+        return this.parks
+    }
+
     get profileHTML() {
         return (`
             <h2 class="welcome">Welcome, ${this.username}</h2><br><br>

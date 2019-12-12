@@ -7,7 +7,6 @@ class Park {
         this.est = est
         this.summary = summary 
         this.pic = pic
-        // this.adapter = new ParksAdapter()
     }
 
     get parkCardHTML() {

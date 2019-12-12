@@ -19,7 +19,6 @@ class ProfilePage extends PageManager {
             const parkObjs = await this.parksAdapter.getParks()
             parkObjs.map(p => this.memoizedParks.push(new Park(p)))
             this.renderParks()
-            console.log(this.memoizedParks)
         } catch(err) {
             this.handleError(err)
         }
@@ -55,8 +54,9 @@ class ProfilePage extends PageManager {
     }
 
     renderParks() {
+        // this.container.innerHTML = this.memoizedParks[1].parkCardHTML
         // this.container.innerHTML = this.memoizedParks.map(p => p.name).join(', ')
-        // this.container.innerHTML = this.memoizedParks.map(p => p.parkCardHTML()).join('')
+        this.container.innerHTML = this.memoizedParks.map(p => p.parkCardHTML).join('')
     }
 
 
