@@ -18,8 +18,8 @@ class User {
     }
 
     get profileHTML() {
-        console.log(this.userVisits)
-        console.log(this.userParks)
+        // console.log(this.userVisits)
+        // console.log(this.userParks)
         return (`
             <h2 class="welcome">Welcome, ${this.username}</h2><br><br>
             ${this.visits.map(v => v.renderVisitCards).join('')}

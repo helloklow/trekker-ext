@@ -5,6 +5,8 @@ class ProfilePage extends PageManager {
         this.user = null
         this.parksAdapter = new ParksAdapter(adapter)
         this.memoizedParks = []
+        // this.visitsAdapter = new VisitsAdapter(adapter)
+        // this.memoizedVisits = []
     }
 
     initBindingsAndEvents() {
@@ -32,6 +34,14 @@ class ProfilePage extends PageManager {
         } catch(err) {
             this.handleError(err)
         }
+        // try {
+        //     const visitObjs = await this.visitsAdapter.getVisits()
+        //     visitObjs.map(v => this.memoizedVisits.push(new Visit(v)))
+        //     // this.renderVisits()
+        //     console.log(this.memoizedVisits)
+        // } catch(err) {
+        //     this.handleError(err)
+        // }
     }
 
     get is_authenticated() {
