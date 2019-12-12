@@ -36,7 +36,7 @@ class VisitsController < ApplicationController
     private 
 
     def visit_params
-        params.require(:active)
+        params.require(:date, :notes)
     end
 
 end
