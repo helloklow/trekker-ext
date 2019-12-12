@@ -15,11 +15,16 @@ class Park {
         this.container = document.querySelector('#page-container')
         this.container.addEventListener('click', (e) => {
             if (e.target && e.target.className === 'visit-icon') {
-                // console.log(e.target.dataset.id)
-                this.renderVisitForm(e)
+                this.handleClick(e)
             }
         })
         this.container.onmouseover = this.container.onmouseout = this.toggleSummary
+    }
+
+    handleClick(e) {
+        e.preventDefault()
+        e.stopImmediatePropagation()
+        console.log(e.target.dataset.id)
     }
 
     toggleSummary(e) {
@@ -34,10 +39,6 @@ class Park {
                 summary.style.visibility = 'hidden'
             }
         }
-    }
-
-    renderVisitForm(e) {
-        console.log(e.target.parentNode)
     }
 
     get parkCardHTML() {
