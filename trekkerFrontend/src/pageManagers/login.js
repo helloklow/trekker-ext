@@ -7,7 +7,6 @@ class LoginPage extends PageManager {
     initBindingsAndEvents() {
         this.form = this.container.querySelector('#login-form')
         this.signupLink = this.container.querySelector('a#signup')
-    
         this.form.addEventListener('submit', this.handleSubmit.bind(this))
         this.signupLink.addEventListener('click', this.handleSignup.bind(this))
     }

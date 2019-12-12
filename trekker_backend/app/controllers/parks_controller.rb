@@ -1,6 +1,4 @@
 class ParksController < ApplicationController
-    before_action :authenticate_user!
-
     def index
         parks = Park.all 
         render json: parks, except: [:created_at, :updated_at]

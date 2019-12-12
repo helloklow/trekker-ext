@@ -1,5 +1,4 @@
-class ProfileAdapter {
-    // Get at time of instantiation
+class ParksAdapter {
     constructor(baseAdapter) {
         this.baseAdapter = baseAdapter
         this.baseURL = this.baseAdapter.baseURL 
@@ -10,23 +9,17 @@ class ProfileAdapter {
         return this.baseAdapter.token
     }
 
-    set token(nullifyToken) {
-        this.baseAdapter.token = nullifyToken
-    }
-
     get headers() {
         return this.baseAdapter.headers
     }
 
-    async getUser() {
-        const resp = await fetch(`${this.baseURL}/profile`, {
+    async getParks() {
+        const resp = await fetch(`${this.baseURL}/parks`, {
             // headers: {'Accept': 'application/json'}
-            headers: this.headers // Get user with auth token from headers
+            headers: this.headers // Get parks with auth token from headers
         })
-        console.log(resp)
         await this.baseAdapter.checkStatus(resp)
         return await resp.json()
     }
-    
 
 }

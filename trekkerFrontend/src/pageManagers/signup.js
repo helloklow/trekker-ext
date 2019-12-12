@@ -14,7 +14,6 @@ class SignupPage extends PageManager {
     handleLogin(e) {
         e.preventDefault()
         this.redirect('login')
-        
     }
 
     async handleSubmit(e) {
