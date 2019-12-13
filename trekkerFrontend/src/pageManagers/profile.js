@@ -75,13 +75,25 @@ class ProfilePage extends PageManager {
     collectVisitedParks() {
         const visitIDs = this.memoizedVisits.map(v => v.park_id)
         for (let id of visitIDs) {
-            this.visitedParks.push(this.memoizedParks.find(p => p.id == id))
-        }
-        this.renderVisitedParks() 
+            this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
+            )}
+        this.renderVisitedParks()
+        this.removeParksFromDiv()
     }
 
     renderVisitedParks() {
         this.visitsContainer.innerHTML = this.visitedParks.map(v => v.visitedParkCardHTML).join('')
+    }
+
+    // Move to rendered parks after working???
+    removeParksFromDiv() {
+        const visitIDs = this.memoizedVisits.map(v => v.park_id) 
+        for (let id of visitIDs) {
+            const removeParks  = this.memoizedParks.filter(p => p.id == id)
+            for (let p of removeParks) {
+                this.parksContainer.removeChild(p)
+            }
+        }
     }
 
 
