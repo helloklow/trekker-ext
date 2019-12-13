@@ -28,7 +28,7 @@ body {
 
 #header-container {
   position: relative;
-  bottom: 100px;
+  bottom: 140px;
   left: 290px;
   text-align: center;
   width: 420px;
@@ -36,14 +36,14 @@ body {
 
 #visits-container {
   position: relative;
-  bottom: 35px;
+  bottom: 60px;
   width: 1000px;
   margin: auto;
   }
 
 #parks-container {
   position: relative;
-  bottom: 55px;
+  bottom: 80px;
   width: 1000px;
   margin: auto;
   }
@@ -316,11 +316,29 @@ input:focus {
 		font-size: 12px;
   }
   
-/* LOGOUT BUTTON */
+/* LOADER & LOGOUT BUTTON */
+.loader {
+  position: relative;
+  left: 153px;
+  top: 180px;
+  border: 16px solid #bddebd;
+  border-top: 16px solid #179b81;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  animation: spin 2s linear infinite;
+  }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+  }
+
 #logout-btn {
   position: relative;
-  bottom: 135px;
-  left: 450px;
+  bottom: 175px;
+  left: 745px;
   }
 
 /* OLD OR UNUSED -> Remove if not needed!!! */

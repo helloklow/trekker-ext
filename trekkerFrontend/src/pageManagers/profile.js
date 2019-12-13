@@ -11,12 +11,6 @@ class ProfilePage extends PageManager {
     }
 
     initBindingsAndEvents() {
-        return null
-    }
-
-    // Create and move to header container so it isn't rendered over?? !!
-    logoutBindingsAndEvents() {
-        this.logoutBtn = this.container.querySelector('#logout-btn')
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
 
@@ -49,18 +43,18 @@ class ProfilePage extends PageManager {
     }
 
     get staticHTML() {
-        if (this.is_authenticated) {   
-            return (`
-                <button type="button" id="logout-btn" class="btn btn-primary btn-block btn-md">Logout</button>
-            `)
-        }
+        this.logoutBtn = document.querySelector('#logout-btn')
+        if (this.is_authenticated) {this.logoutBtn.style.visibility="visible"}
+        return (`
+            <div class="loader"></div>
+        `)
     }
 
     handleLogout(e) {
         e.preventDefault()
-        // console.log('handling logout???')
-        this.redirect('login')
         this.profileAdapter.token = null
+        this.redirect('login')
+        location.reload()
         // console.log(this.profileAdapter.token)
     }
 
