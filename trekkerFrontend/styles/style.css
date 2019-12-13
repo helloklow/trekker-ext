@@ -15,7 +15,6 @@ body {
 #page-container {
   width: 1000px;
   margin: auto;
-  top: 2150px;
 }
 
 #alert-container {
@@ -37,20 +36,16 @@ body {
 
 #visits-container {
   position: relative;
-  top: 75px;
-  left: 290px;
-  text-align: center;
-  width: 420px;
-  line-height: 14px;
+  bottom: 50px;
+  width: 1000px;
+  margin: auto;
   }
 
 #parks-container {
   position: relative;
-  top: 75px;
-  left: 290px;
-  text-align: center;
-  width: 420px;
-  line-height: 14px;
+  bottom: 70px;
+  width: 1000px;
+  margin: auto;
   }
 
 #logo {
@@ -63,6 +58,13 @@ body {
 
   /* Update position of this text when window is widened! */
 .welcome {  
+  text-align: center;
+  color: #636363;
+  }
+
+.user-welcome {  
+  position: relative;
+  top: 85px;
   text-align: center;
   color: #636363;
   }
@@ -316,9 +318,9 @@ input:focus {
   
 /* LOGOUT BUTTON */
 #logout-btn {
-  position: fixed;
-  top: 10px;
-  right: 20px;
+  position: relative;
+  bottom: 135px;
+  left: 450px;
   }
 
 /* OLD OR UNUSED -> Remove if not needed!!! */

@@ -10,7 +10,7 @@ class User {
 
     get profileHTML() {
         return (`
-            <h2 class="welcome">Welcome, ${this.username}</h2><br><br>
+            <h2 class="user-welcome">Welcome, ${this.username}</h2><br><br>
         `)
     }
 
@@ -27,7 +27,6 @@ class User {
             </div>
         `)
     }
- 
 
 }
 
@@ -37,5 +36,3 @@ class User {
     // hiker icon redirects to visit form (show park name on form page?)
     // 'submit' form creates 'my visit' btn, remove btn, renders hiker icon green -> redirects to profile
     // OR 'my visit' has edit and remove btns?
-
-// <h2 class="welcome">Welcome, ${this.username}</h2><br><br>

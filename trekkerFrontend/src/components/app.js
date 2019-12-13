@@ -6,18 +6,19 @@ class App {
         this.router = new Router({
             'signup': new SignupPage(this.headerContainer, this.adapter),
             'login': new LoginPage(this.headerContainer, this.adapter),
-            'profile': new ProfilePage(this.headerContainer, this.adapter)
+            'profile': new ProfilePage(this.headerContainer, this.visitsContainer, this.parksContainer, this.adapter)
         })
         this.router.assignRedirect(this.pageManagerRedirect.bind(this))
         this.router.assignAlertHandler(this.handleAlert.bind(this))
-        this.renderPage('signup')
+        // this.renderPage('signup')
+        this.renderPage('login')
     }
 
     initBindingsAndEvents() {
         this.alertContainer = document.querySelector('#alert-container')
         this.headerContainer = document.querySelector('#header-container')
-        // this.visitsContainer = document.querySelector('#visits-container')
-        // this.parksContainer = document.querySelector('#parks-container')
+        this.visitsContainer = document.querySelector('#visits-container')
+        this.parksContainer = document.querySelector('#parks-container')
     }
 
     handleAlert(msg, type = 'danger', timeout = 5000) {

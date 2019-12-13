@@ -56,8 +56,8 @@ class Park {
         `)
     }
 
-    get visitCardHTML() {
-        this.visitDetails
+    get visitedParkCardHTML() {
+        console.log(this.parks)
         return (`
             <div id='visit-card' class='visit-card'>
                 <h4 class='center-text'>${this.name}</h4>
@@ -69,6 +69,5 @@ class Park {
             </div>
         `)
     }
-
 
 }

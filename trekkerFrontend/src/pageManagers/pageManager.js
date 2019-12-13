@@ -1,6 +1,8 @@
 class PageManager {
-    constructor(container) {
+    constructor(container, visitsContainer, parksContainer) {
         this.container = container 
+        this.visitsContainer = visitsContainer 
+        this.parksContainer = parksContainer
     }
 
     // If there's nothing to fetch in child class, render will fill method with null and avoid erroring
