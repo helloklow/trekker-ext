@@ -1,7 +1,8 @@
-class Visit {
+class Visit { // extends User
     constructor(visit) {
+        // super(username, parks)
         const {id, date, notes, user_id, park_id} = visit
-        this.id = id
+        this.visit_id = id
         this.date = date 
         this.notes = notes
         this.park_id = park_id
@@ -10,6 +11,7 @@ class Visit {
     }
 
     visitBindingsAndEvents() {
+        // console.log(this.parks) --> returns undefined
         this.container = document.querySelector('#page-container')
     }
 

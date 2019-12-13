@@ -319,10 +319,10 @@ input:focus {
 /* LOADER & LOGOUT BUTTON */
 .loader {
   position: relative;
-  left: 153px;
-  top: 180px;
-  border: 16px solid #bddebd;
-  border-top: 16px solid #179b81;
+  left: 151px;
+  top: 130px;
+  border: 16px solid #456651;
+  border-top: 16px solid #bddebd;
   border-radius: 50%;
   width: 120px;
   height: 120px;
