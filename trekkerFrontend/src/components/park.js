@@ -25,8 +25,17 @@ class Park {
         e.preventDefault()
         e.stopImmediatePropagation()
         console.log(e.target.dataset.id)
+        const parkId = e.target.dataset.id 
+        const park = this.getParkById(parkId)
+        this.renderForm(park)
         // How do I render visit form?
     }
+
+    // renderForm(park) { --> Micah renders from profile with access to user...
+    //     if (park) {
+    //         console.log(park.parentNode)
+    //     }
+    // }
 
     toggleSummary(e) {
         if (e.target.dataset.action === 'toggle-summary') {
@@ -57,16 +66,16 @@ class Park {
     }
 
     get visitedParkCardHTML() {
-        return (`
-            <div id='visit-card' class='visit-card'>
-                <h4 class='center-text'>${this.name}</h4>
-                <p class='small-text'>${this.location}, est. ${this.est}</p>
-                <div id='visit-details'> 
-                    <button class='visited-icon' data-id='${this.id}' data-action='visited-icon' alt='Visited'></button>
-                    <button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button>
-                </div>                  
-            </div>
-        `)
+        // return (`
+        //     <div id='visit-card' class='visit-card'>
+        //         <h4 class='center-text'>${this.name}</h4>
+        //         <p class='small-text'>${this.location}, est. ${this.est}</p>
+        //         <div id='visit-details'> 
+        //             <button class='visited-icon' data-id='${this.id}' data-action='visited-icon' alt='Visited'></button>
+        //             <button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button>
+        //         </div>                  
+        //     </div>
+        // `)
     }
 
 }
