@@ -8,32 +8,30 @@ class User {
         this.parks = parks.map(p => new Park(p)) // Make park objs 
     }
 
-    // Can I use these methods to make visit and park objs available to the visit class?
-    get userVisits() {
-        return this.visits
-    }
-
-    get userParks() {
-        return this.parks
-    }
-
-    get userVisitsHTML() {
-        // console.log(this.userVisits)
-        // console.log(this.userParks)
-        // console.log(this.visits.map(v => v.park_id))
-        // forEach visit -> append park-card with visit info if park_id matches parks.id
-        // if (this.visits.park_id === this.parks.id) {
-        //     console.log(this.visits[1])
-        //     this.visits.forEach(p => p.renderVisitCards(p)).join('')
-        // }
+    get profileHTML() {
         return (`
             <h2 class="welcome">Welcome, ${this.username}</h2><br><br>
-            ${this.visits.map(v => v.renderVisitCards).join('')}
+        `)
+    }
+
+    get visitCardHTML() {
+        return (`
+            <div id='park-card' class='park-card'>
+                <h4 class='center-text'>${this.name}</h4>
+                <p class='small-text'>${this.location}, est. ${this.est}</p>
+                <div id='park-details'> 
+                    <img class='park-pic' data-id='${this.id}' data-action='toggle-summary' src='${this.pic}'>
+                    <p class='park-summary' data-id='${this.id}' data-action='toggle-summary'>${this.summary}</p>
+                <button class='visit-icon' data-id='${this.id}' data-action='visit-icon' alt='Visit'></button>
+                </div>                  
+            </div>
         `)
     }
  
 
 }
+
+// ${this.visits.map(v => v.renderVisitCards).join('')}
 
 // INSTEAD OF RENDERING OVER PARK CARDS:
     // hiker icon redirects to visit form (show park name on form page?)

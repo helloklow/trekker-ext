@@ -56,5 +56,19 @@ class Park {
         `)
     }
 
+    get visitCardHTML() {
+        this.visitDetails
+        return (`
+            <div id='visit-card' class='visit-card'>
+                <h4 class='center-text'>${this.name}</h4>
+                <p class='small-text'>${this.location}, est. ${this.est}</p>
+                <div id='visit-details'> 
+                    <button class='visited-icon' data-id='${this.id}' data-action='visited-icon' alt='Visited'></button>
+                    <button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button>
+                </div>                  
+            </div>
+        `)
+    }
+
 
 }

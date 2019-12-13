@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :visits
-  resources :parks do
-    resources :visits
-  end
 
   root to: "home#index"
   get '/profile' => 'home#profile'
@@ -22,6 +18,12 @@ Rails.application.routes.draw do
   resources :users do 
     resources :visits
   end
+
+  resources :visits do 
+    resources :parks 
+  end
+  
+  resources :parks
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

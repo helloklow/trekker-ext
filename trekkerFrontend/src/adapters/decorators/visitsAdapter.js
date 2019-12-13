@@ -23,5 +23,3 @@ class VisitsAdapter {
     }
 
 }
-
-// Can't use render_resource (controller) with index, so this won't correlate park. Likely delete!
