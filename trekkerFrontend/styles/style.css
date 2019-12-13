@@ -9,11 +9,42 @@ body {
 #app-container {
   width: 1000px;
   margin: auto;
-  position: relative;
   bottom: 85px;
   }
 
+#page-container {
+  width: 1000px;
+  margin: auto;
+  top: 2150px;
+}
+
 #alert-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  width: 425px;
+  line-height: 14px;
+  }
+
+#header-container {
+  position: relative;
+  bottom: 100px;
+  left: 290px;
+  text-align: center;
+  width: 420px;
+  }
+
+#visits-container {
+  position: relative;
+  top: 75px;
+  left: 290px;
+  text-align: center;
+  width: 420px;
+  line-height: 14px;
+  }
+
+#parks-container {
   position: relative;
   top: 75px;
   left: 290px;
@@ -26,15 +57,12 @@ body {
   position: relative;
   height: 185px;
   left: 425px;
-  top: 100px;
+  top: 20px;
   padding-bottom: 40px;
   }
 
   /* Update position of this text when window is widened! */
-.welcome { 
-  position: relative;
-  top: 70px; 
-  right: 70px;
+.welcome {  
   text-align: center;
   color: #636363;
   }
@@ -209,8 +237,6 @@ input:focus {
   }
   
 .user-form {
-    position: absolute;
-    left: 315px;
 		width: 370px;
 		margin: 0 auto;
     padding: 95px 0;

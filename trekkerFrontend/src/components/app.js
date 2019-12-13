@@ -4,9 +4,9 @@ class App {
         this.initBindingsAndEvents()
         this.alertManager = new Alert(this.alertContainer)
         this.router = new Router({
-            'signup': new SignupPage(this.pageContainer, this.adapter),
-            'login': new LoginPage(this.pageContainer, this.adapter),
-            'profile': new ProfilePage(this.pageContainer, this.adapter)
+            'signup': new SignupPage(this.headerContainer, this.adapter),
+            'login': new LoginPage(this.headerContainer, this.adapter),
+            'profile': new ProfilePage(this.headerContainer, this.adapter)
         })
         this.router.assignRedirect(this.pageManagerRedirect.bind(this))
         this.router.assignAlertHandler(this.handleAlert.bind(this))
@@ -15,7 +15,7 @@ class App {
 
     initBindingsAndEvents() {
         this.alertContainer = document.querySelector('#alert-container')
-        this.pageContainer = document.querySelector('#page-container')
+        this.headerContainer = document.querySelector('#header-container')
         // this.visitsContainer = document.querySelector('#visits-container')
         // this.parksContainer = document.querySelector('#parks-container')
     }

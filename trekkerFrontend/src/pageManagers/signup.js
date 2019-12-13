@@ -34,9 +34,9 @@ class SignupPage extends PageManager {
 
     get staticHTML() {
         return (`
+            <div id="signup-form" class="user-form">
             <h3 class="welcome">Welcome, Trekker</h3>
-            <h4 class="welcome">Sign up to track your National Park adventures.</h4>
-            <div id="signup-form" class="user-form">	
+            <h4 class="welcome">Sign up to track your National Park adventures.</h4><br>	
             <form id="signup">
             <h2>Create Account</h2>
             <div class="form-group">
