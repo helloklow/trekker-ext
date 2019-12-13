@@ -10,7 +10,7 @@ class User {
 
     get profileHTML() {
         return (`
-            <h2 class="user-welcome">Welcome, ${this.username}</h2><br><br>
+            <h2 class="user-welcome">Welcome, ${this.username}</h2>
         `)
     }
 

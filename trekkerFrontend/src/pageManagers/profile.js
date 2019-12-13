@@ -78,7 +78,7 @@ class ProfilePage extends PageManager {
             this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
             )}
         this.renderVisitedParks()
-        this.removeParksFromDiv()
+        // this.removeParksFromDiv()
     }
 
     renderVisitedParks() {
@@ -86,15 +86,15 @@ class ProfilePage extends PageManager {
     }
 
     // Move to rendered parks after working???
-    removeParksFromDiv() {
-        const visitIDs = this.memoizedVisits.map(v => v.park_id) 
-        for (let id of visitIDs) {
-            const removeParks  = this.memoizedParks.filter(p => p.id == id)
-            for (let p of removeParks) {
-                this.parksContainer.removeChild(p)
-            }
-        }
-    }
+    // removeParksFromDiv() {
+    //     const visitIDs = this.memoizedVisits.map(v => v.park_id) 
+    //     for (let id of visitIDs) {
+    //         const removeParks  = this.memoizedParks.filter(p => p.id == id)
+    //         for (let p of removeParks) {
+                
+    //         }
+    //     }
+    // }
 
 
 }
