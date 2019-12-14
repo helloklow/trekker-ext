@@ -1,6 +1,5 @@
-class Visit { // extends User
+class Visit {
     constructor(visit) {
-        // super(username, parks)
         const {id, date, notes, user_id, park_id} = visit
         this.visit_id = id
         this.date = date 
@@ -11,19 +10,7 @@ class Visit { // extends User
     }
 
     visitBindingsAndEvents() {
-        this.container = document.querySelector('#page-container')
-    }
-
-    get visitDetailsHTML() {
-        console.log('visit details')
-        // return (`
-        //     <div id='visit-details'> 
-        //         <p class='visit-date' data-id='${this.id}' data-action='toggle-visit'>${this.date}</p>
-        //         <p class='visit-notes' data-id='${this.id}' data-action='toggle-visit'>${this.notes}</p>
-        //         <button class='visited-icon' data-id='${this.id}' data-action='visited-icon' alt='Visited'></button>
-        //         <button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button>
-        //     </div>                  
-        // `)
+        this.container = document.querySelector('#visits-container')
     }
 
     // Need to get visited parks to display park info in visited cards!
@@ -39,6 +26,3 @@ class Visit { // extends User
     }
 
 }
-
-{/* ADD REMOVE AND EDIT BUTTONS
-<button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button> */}

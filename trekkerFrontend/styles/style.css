@@ -28,19 +28,20 @@ body {
 
 #header-container {
   position: relative;
-  bottom: 140px;
+  bottom: 180px;
   left: 290px;
   text-align: center;
   width: 420px;
   }
 
 #visits-container {
+  visibility: hidden;
   position: relative;
   overflow: scroll;
   overflow-x: hidden;
-  left: 20px;
-  bottom: 30px;
-  width: 700px;
+  left: 40px;
+  bottom: 80px;
+  width: 650px;
   height: 330px;
   padding: 15px;
   margin: auto;
@@ -140,7 +141,7 @@ input:focus {
 .park-card {
     float: left;
     width: 240px;
-    height: 250px;
+    height: 245px;
     margin: 5px;
     border-radius: 8px;
     position: relative;
@@ -160,18 +161,18 @@ input:focus {
     visibility: hidden; 
     cursor: pointer;
     float: left;
-    font-size: 1.13rem;
+    font-size: 1.19rem;
     line-height: 13px;
     width: 230px;
-    height: 200px;
+    height: 190px;
     padding-left: 15px;
     position: absolute;
-    top: 50px;
+    top: 45px;
     background: #f9e9d2;
     color: #636363;
   }
 
-.visit-icon {
+/* .visit-icon {
     background-image: url('../images/grey-icon.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -184,44 +185,25 @@ input:focus {
     margin: 3px;
     border: 1px solid #f9e9d2;
     background-color: #f9e9d2;
-  }
+  } */
   
 /* VISITED DETAILS DISPLAY */
 #visit-details {
-  position: relative;
   /* overflow: scroll;
   overflow-x: hidden; */
-  /* left: 5px; */
-  bottom: 20px;
-  width: 620px;
-  height: 100px;
-  padding: 5px;
-  margin: 5px;
+  float: left;
   font-size: 1.3rem;
   line-height: 14px;
+  width: 280px;
+  height: 150px;
+  margin: 5px;
+  padding: 10px;
   border-radius: 8px;
+  position: relative;
+  bottom: 20px;
   background: #f9e9d2;
   color: #636363;
 }
-
-/* .visit-btn {  
-  float: right;      
-  text-align: center;
-  font-size: 11px;
-  font-weight: bold;
-  background: #19aa8d;
-  border-radius: 3px;
-  border: none;
-  width: 65px;
-  height: 22px;
-  margin: 2px;
-  color: #ffffff;
-  outline: none !important; 
-  } */
-
-.visit-btn:hover, .visit-btn:focus {
-  background: #179b81;
-  }
 
 #edit-btn {
   float: right; 
@@ -245,6 +227,24 @@ input:focus {
   background-color: #f9e9d2;
   }
 
+#add-visit-btn {  
+  /* float: right;      
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  background: #19aa8d;
+  border-radius: 3px;
+  border: none;
+  width: 65px;
+  height: 22px;
+  margin: 2px;
+  color: #ffffff;
+  outline: none !important;  */
+  position: relative;
+  top: 352px;
+  left: 330px;
+  }
+
 /* .visited-icon {
     background-image: url('../images/green-icon.png');
     background-repeat: no-repeat;
@@ -256,21 +256,6 @@ input:focus {
     bottom: 3px;
     margin: 2px;
     border: 1px solid #bddebd;
-    background-color: #bddebd;
-  } */
-  
-/* .remove-btn {
-    background-image: url('../images/x-icon.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: 4px;
-    bottom: 2px;
-    margin: 4px;
-    border: 3px solid #bddebd;
     background-color: #bddebd;
   } */
 

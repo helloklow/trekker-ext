@@ -44,7 +44,11 @@ class ProfilePage extends PageManager {
 
     get staticHTML() {
         this.logoutBtn = document.querySelector('#logout-btn')
-        if (this.is_authenticated) {this.logoutBtn.style.visibility="visible"}
+        this.addVisitBtn = document.querySelector('#add-visit-btn')
+        if (this.is_authenticated) {
+            this.logoutBtn.style.visibility="visible"
+            this.addVisitBtn.style.visibility="visible"
+        }
         return (`
             <div class="loader"></div>
         `)
@@ -71,26 +75,12 @@ class ProfilePage extends PageManager {
         for (let id of visitIds) {
             this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
             )}
+        this.visitsContainer.style.visibility = 'visible'
         this.renderVisits()
-        // this.removeParksFromDiv()
     }
 
     renderVisits() {
-        // this.visitsContainer.innerHTML = this.visitedParks.map(v => v.visitedParkCardHTML).join('')
         this.visitsContainer.innerHTML = this.memoizedVisits.map(v => v.visitHTML).join('')
-        
     }
-
-    // Move to rendered parks after working???
-    // removeParksFromDiv() {
-    //     const visitIds = this.memoizedVisits.map(v => v.park_id) 
-    //     for (let id of visitIds) {
-    //         const removeParks  = this.memoizedParks.filter(p => p.id == id)
-    //         for (let p of removeParks) {
-                
-    //         }
-    //     }
-    // }
-
 
 }
