@@ -44,7 +44,27 @@
             
         </div>
         <div id="visits-container">
-    
+          <div id="add-visit-form" style="visibility: hidden">
+            <form id="add-visit-form class="add-visit-form">
+                <div class="form-row">
+                <div class="form-group col-md-4">
+                <select id="input-park" class="form-control">
+                </select>
+                </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="date" class="form-control" id="date" placeholder="Date" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <textarea class="form-control" id="notes" rows="3" placeholder="Notes" required></textarea>
+                    </div>
+                </div>
+               <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
         <div id="parks-container">
   

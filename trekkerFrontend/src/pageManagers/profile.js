@@ -16,6 +16,12 @@ class ProfilePage extends PageManager {
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
 
+    // visitFormBindingsAndEvents() {
+    //     const form = document.querySelector('#add-visit-form')
+    //     console.log(form)
+    //     // form.addEventListener('submit', this.addVisit.bind(this))
+    // }
+
     async fetchAndRenderPageResources() {
         try {
             const userObj = await this.profileAdapter.getUser()
@@ -85,47 +91,57 @@ class ProfilePage extends PageManager {
         // console.log(this.profileAdapter.token)
     }
 
+    // addVisit(e) {
+    //     e.preventDefault()
+    //     console.log('adding visit')
+    // }
+
     visitForm(e) {
         e.preventDefault()
-        // const visit = this.memoizedVisits
-        // this.visitsContainer.innerHTML = visit.renderVisitForm
-        this.visitsContainer.innerHTML = (`
-        <div id="add-visit-form>
-        <form id="add-visit-form">
-            <div class="form-row">
-            <div class="form-group col-md-4">
-            <label for="input-park">Park</label>
-            <select id="input-park" class="form-control">
-            </select>
-            </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <input type="date" class="form-control" id="date" placeholder="Date" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <textarea class="form-control" id="notes" rows="3" placeholder="Notes"></textarea>
-                </div>
-            </div>
-           <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        </div>
-        `)
-        this.parkOptions()
+        const form = this.visitsContainer.querySelector('#add-visit-form')
+        console.log(form)
+    //     // const visit = this.memoizedVisits
+    //     // this.visitsContainer.innerHTML = visit.renderVisitForm
+    //     this.visitsContainer.innerHTML = (`
+        // <div id="add-visit-form>
+        // <form id="add-visit-form class="add-visit-form">
+        //     <div class="form-row">
+        //     <div class="form-group col-md-4">
+        //     <select id="input-park" class="form-control">
+        //     </select>
+        //     </div>
+        //     </div>
+        //     <div class="form-row">
+        //         <div class="form-group col-md-6">
+        //             <input type="date" class="form-control" id="date" placeholder="Date" required>
+        //         </div>
+        //     </div>
+        //     <div class="form-row">
+        //         <div class="form-group col-md-6">
+        //             <textarea class="form-control" id="notes" rows="3" placeholder="Notes" required></textarea>
+        //         </div>
+        //     </div>
+        //    <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+        // </form>
+        // </div>
+    //     `)
+    //     // const form = document.getElementById('add-visit-form')
+    //     // console.log(form)
+    //     // this.parkOptions()
+    //     // this.visitFormBindingsAndEvents()
+        
     }
 
-    parkOptions() {
-        const select = document.querySelector('#input-park')
-        const options = this.memoizedParks.map(p => p.name)
-        for (let i = 0; i < options.length; i++) {
-            let opt = options[i]
-            let el = document.createElement('option')
-            el.innerText = opt 
-            el.value = opt 
-            select.appendChild(el)
-        }
-    }
+    // parkOptions() {
+    //     const select = document.querySelector('#input-park')
+    //     const options = this.memoizedParks.map(p => p.name)
+    //     for (let i = 0; i < options.length; i++) {
+    //         let opt = options[i]
+    //         let el = document.createElement('option')
+    //         el.innerText = opt 
+    //         el.value = opt 
+    //         select.appendChild(el)
+    //     }
+    // }
 
 }

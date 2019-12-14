@@ -13,10 +13,10 @@ class Visit {
         this.container = document.querySelector('#visits-container')
     }
 
-    renderVisitForm(e) {
-        e.preventDefault()
-        console.log('visit class form')
-    }
+    // renderVisitForm(e) {
+    //     e.preventDefault()
+    //     console.log('visit class form')
+    // }
 
     get visitHTML() {
         return (`
