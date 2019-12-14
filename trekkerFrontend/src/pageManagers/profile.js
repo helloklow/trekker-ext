@@ -7,10 +7,11 @@ class ProfilePage extends PageManager {
         this.memoizedParks = []
         this.visitsAdapter = new VisitsAdapter(adapter)
         this.memoizedVisits = []
-        this.visitedParks = []
+        // this.visitedParks = []
     }
 
     initBindingsAndEvents() {
+        this.visitsContainer.style.visibility = 'visible'
         this.addVisitBtn.addEventListener('click', this.visitForm.bind(this))
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
@@ -33,7 +34,7 @@ class ProfilePage extends PageManager {
         try {
             const visitObjs = await this.visitsAdapter.getVisits()
             visitObjs.map(v => this.memoizedVisits.push(new Visit(v)))
-            this.collectVisits()
+            this.renderVisits() // this.collectVisits()
         } catch(err) {
             this.handleError(err)
         }
@@ -63,23 +64,17 @@ class ProfilePage extends PageManager {
         this.parksContainer.innerHTML = this.memoizedParks.map(p => p.parkCardHTML).join('')
     }
 
-    collectVisits() {
-        const visitIds = this.memoizedVisits.map(v => v.park_id)
-        for (let id of visitIds) {
-            this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
-            )}
-        this.visitsContainer.style.visibility = 'visible'
-        this.renderVisits()
-    }
+    // collectVisits() {
+    //     const visitIds = this.memoizedVisits.map(v => v.park_id)
+    //     for (let id of visitIds) {
+    //         this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
+    //         )}
+    //     this.visitsContainer.style.visibility = 'visible'
+    //     this.renderVisits()
+    // }
 
     renderVisits() {
         this.visitsContainer.innerHTML = this.memoizedVisits.map(v => v.visitHTML).join('')
-    }
-
-    visitForm(e) {
-        e.preventDefault()
-        console.log('visit form')
-        // this.visitsContainer.innerHTML = visit.renderVisitForm
     }
 
     handleLogout(e) {
@@ -88,6 +83,49 @@ class ProfilePage extends PageManager {
         this.redirect('login')
         location.reload()
         // console.log(this.profileAdapter.token)
+    }
+
+    visitForm(e) {
+        e.preventDefault()
+        // const visit = this.memoizedVisits
+        // this.visitsContainer.innerHTML = visit.renderVisitForm
+        this.visitsContainer.innerHTML = (`
+        <div id="add-visit-form>
+        <form id="add-visit-form">
+            <div class="form-row">
+            <div class="form-group col-md-4">
+            <label for="input-park">Park</label>
+            <select id="input-park" class="form-control">
+            </select>
+            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="date" class="form-control" id="date" placeholder="Date" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <textarea class="form-control" id="notes" rows="3" placeholder="Notes"></textarea>
+                </div>
+            </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+        `)
+        this.parkOptions()
+    }
+
+    parkOptions() {
+        const select = document.querySelector('#input-park')
+        const options = this.memoizedParks.map(p => p.name)
+        for (let i = 0; i < options.length; i++) {
+            let opt = options[i]
+            let el = document.createElement('option')
+            el.innerText = opt 
+            el.value = opt 
+            select.appendChild(el)
+        }
     }
 
 }
