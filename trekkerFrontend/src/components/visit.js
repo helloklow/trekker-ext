@@ -13,7 +13,11 @@ class Visit {
         this.container = document.querySelector('#visits-container')
     }
 
-    // Need to get visited parks to display park info in visited cards!
+    visitForm(e) {
+        e.preventDefault()
+        console.log('visit form')
+    }
+
     get visitHTML() {
         return (`
             <div id='visit-details'>

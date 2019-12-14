@@ -11,6 +11,7 @@ class ProfilePage extends PageManager {
     }
 
     initBindingsAndEvents() {
+        this.addVisitBtn.addEventListener('click', this.visitForm.bind(this))
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
 
@@ -54,14 +55,6 @@ class ProfilePage extends PageManager {
         `)
     }
 
-    handleLogout(e) {
-        e.preventDefault()
-        this.profileAdapter.token = null
-        this.redirect('login')
-        location.reload()
-        // console.log(this.profileAdapter.token)
-    }
-
     renderUser() {
         this.container.innerHTML = this.user.profileHTML
     }
@@ -81,6 +74,19 @@ class ProfilePage extends PageManager {
 
     renderVisits() {
         this.visitsContainer.innerHTML = this.memoizedVisits.map(v => v.visitHTML).join('')
+    }
+
+    // visitForm(e) {
+    //     e.preventDefault()
+    //     console.log('visit form')
+    // }
+
+    handleLogout(e) {
+        e.preventDefault()
+        this.profileAdapter.token = null
+        this.redirect('login')
+        location.reload()
+        // console.log(this.profileAdapter.token)
     }
 
 }

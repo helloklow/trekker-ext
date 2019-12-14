@@ -10,32 +10,10 @@ class Park {
         this.cardBindingsAndEvents()
     }
 
-    // Need to fire after parkCardHTML is dynamically rendered
     cardBindingsAndEvents() {
         this.container = document.querySelector('#page-container')
-        this.container.addEventListener('click', (e) => {
-            if (e.target && e.target.className === 'visit-icon') {
-                this.handleClick(e)
-            }
-        })
         this.container.onmouseover = this.container.onmouseout = this.toggleSummary
     }
-
-    handleClick(e) {
-        e.preventDefault()
-        e.stopImmediatePropagation()
-        console.log(e.target.dataset.id)
-        const parkId = e.target.dataset.id 
-        const park = this.getParkById(parkId)
-        this.renderForm(park)
-        // How do I render visit form?
-    }
-
-    // renderForm(park) { --> Micah renders from profile with access to user...
-    //     if (park) {
-    //         console.log(park.parentNode)
-    //     }
-    // }
 
     toggleSummary(e) {
         if (e.target.dataset.action === 'toggle-summary') {
@@ -59,18 +37,10 @@ class Park {
                 <div id='park-details'> 
                     <img class='park-pic' data-id='${this.id}' data-action='toggle-summary' src='${this.pic}'>
                     <p class='park-summary' data-id='${this.id}' data-action='toggle-summary'>${this.summary}</p>
+                    <button class='visit-icon' data-id='${this.id}' data-action='visit-icon' alt='Visit'></button>
                 </div>                  
             </div>
         `)
     }
-
-    // get visitedParkCardHTML() {
-    //     return (`
-    //         <div id='visit-card-park' class='visit-card'>
-    //             <h4 class='center-text'>${this.name}</h4>
-    //             <p class='small-text'>${this.location}, est. ${this.est}</p>                
-    //         </div>
-    //     `)
-    // }
 
 }
