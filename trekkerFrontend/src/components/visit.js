@@ -13,9 +13,9 @@ class Visit {
         this.container = document.querySelector('#visits-container')
     }
 
-    visitForm(e) {
+    renderVisitForm(e) {
         e.preventDefault()
-        console.log('visit form')
+        console.log('visit class form')
     }
 
     get visitHTML() {
@@ -30,3 +30,4 @@ class Visit {
     }
 
 }
+

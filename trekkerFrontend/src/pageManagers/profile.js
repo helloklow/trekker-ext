@@ -76,10 +76,11 @@ class ProfilePage extends PageManager {
         this.visitsContainer.innerHTML = this.memoizedVisits.map(v => v.visitHTML).join('')
     }
 
-    // visitForm(e) {
-    //     e.preventDefault()
-    //     console.log('visit form')
-    // }
+    visitForm(e) {
+        e.preventDefault()
+        console.log('visit form')
+        // this.visitsContainer.innerHTML = visit.renderVisitForm
+    }
 
     handleLogout(e) {
         e.preventDefault()

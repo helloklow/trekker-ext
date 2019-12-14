@@ -37,7 +37,6 @@ class Park {
                 <div id='park-details'> 
                     <img class='park-pic' data-id='${this.id}' data-action='toggle-summary' src='${this.pic}'>
                     <p class='park-summary' data-id='${this.id}' data-action='toggle-summary'>${this.summary}</p>
-                    <button class='visit-icon' data-id='${this.id}' data-action='visit-icon' alt='Visit'></button>
                 </div>                  
             </div>
         `)
