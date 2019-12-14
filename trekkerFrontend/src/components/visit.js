@@ -11,7 +11,6 @@ class Visit { // extends User
     }
 
     visitBindingsAndEvents() {
-        // console.log(this.parks) --> returns undefined
         this.container = document.querySelector('#page-container')
     }
 
@@ -28,24 +27,19 @@ class Visit { // extends User
     }
 
     // Need to get visited parks to display park info in visited cards!
-    // get visitCardHTML() {
-    //     return (`
-    //         <div id='visit-card' class='visit-card'>
-    //             <h4 class='center-text'>${this.name}</h4>
-    //             <p class='small-text'>${this.location}, est. ${this.est}</p>
-    //             <div id='visit-details'> 
-    //                 <p class='visit-date' data-id='${this.id}' data-action='toggle-visit'>${this.date}</p>
-    //                 <p class='visit-notes' data-id='${this.id}' data-action='toggle-visit'>${this.notes}</p>
-    //             <button class='visited-icon' data-id='${this.id}' data-action='visited-icon' alt='Visited'></button>
-    //             <button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button>
-    //         </div>                  
-    //         </div>
-    //     `)
-    // }
-
+    get visitHTML() {
+        return (`
+            <div id='visit-details'>
+                <p class='visit-date' data-id='${this.id}' data-action='toggle-visit'>${this.date}</p>
+                <p class='visit-notes' data-id='${this.id}' data-action='toggle-visit'>${this.notes}</p> 
+                <button class='edit' data-id='${this.id}' data-action='edit-btn' alt='edit'>Edit</button>
+                <button class='remove' data-id='${this.id}' data-action='remove-btn' alt='Remove'>Remove</button>
+                <br><br><br><br> 
+            </div>           
+        `)
+    }
 
 }
 
-{/* ADD BACK IN PARK PIC / SUMMARY TOGGLE
-<img class='park-pic' data-name='${this.name}' data-action='toggle-summary' src='${this.pic}'>
-<p class='visit-summary' data-name='${this.name}' data-action='toggle-summary'>${this.summary}</p> */}
+{/* ADD REMOVE AND EDIT BUTTONS
+<button class='remove-btn' data-id='${this.id}' data-action='remove-btn' alt='Remove'></button> */}

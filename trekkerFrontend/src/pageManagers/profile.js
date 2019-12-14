@@ -32,7 +32,7 @@ class ProfilePage extends PageManager {
         try {
             const visitObjs = await this.visitsAdapter.getVisits()
             visitObjs.map(v => this.memoizedVisits.push(new Visit(v)))
-            this.collectVisitedParks()
+            this.collectVisits()
         } catch(err) {
             this.handleError(err)
         }
@@ -66,17 +66,19 @@ class ProfilePage extends PageManager {
         this.parksContainer.innerHTML = this.memoizedParks.map(p => p.parkCardHTML).join('')
     }
 
-    collectVisitedParks() {
+    collectVisits() {
         const visitIds = this.memoizedVisits.map(v => v.park_id)
         for (let id of visitIds) {
             this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
             )}
-        this.renderVisitedParks()
+        this.renderVisits()
         // this.removeParksFromDiv()
     }
 
-    renderVisitedParks() {
-        this.visitsContainer.innerHTML = this.visitedParks.map(v => v.visitedParkCardHTML).join('')
+    renderVisits() {
+        // this.visitsContainer.innerHTML = this.visitedParks.map(v => v.visitedParkCardHTML).join('')
+        this.visitsContainer.innerHTML = this.memoizedVisits.map(v => v.visitHTML).join('')
+        
     }
 
     // Move to rendered parks after working???
