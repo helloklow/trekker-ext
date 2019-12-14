@@ -32,9 +32,8 @@ class Visit { // extends User
             <div id='visit-details'>
                 <p class='visit-date' data-id='${this.id}' data-action='toggle-visit'>${this.date}</p>
                 <p class='visit-notes' data-id='${this.id}' data-action='toggle-visit'>${this.notes}</p> 
-                <button class='edit' data-id='${this.id}' data-action='edit-btn' alt='edit'>Edit</button>
-                <button class='remove' data-id='${this.id}' data-action='remove-btn' alt='Remove'>Remove</button>
-                <br><br><br><br> 
+                <button id='delete-btn' class='visit-btn' data-id='${this.id}' data-action='delete-btn' alt='Delete'></button>
+                <button id='edit-btn' class='visit-btn' data-id='${this.id}' data-action='edit-btn' alt='edit'></button>
             </div>           
         `)
     }

@@ -204,6 +204,47 @@ input:focus {
   color: #636363;
 }
 
+/* .visit-btn {  
+  float: right;      
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  background: #19aa8d;
+  border-radius: 3px;
+  border: none;
+  width: 65px;
+  height: 22px;
+  margin: 2px;
+  color: #ffffff;
+  outline: none !important; 
+  } */
+
+.visit-btn:hover, .visit-btn:focus {
+  background: #179b81;
+  }
+
+#edit-btn {
+  float: right; 
+  background-image: url('../images/edit-icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #f9e9d2;
+  background-color: #f9e9d2;
+  }
+
+#delete-btn {
+  float: right; 
+  background-image: url('../images/x-icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #f9e9d2;
+  background-color: #f9e9d2;
+  }
+
 /* .visited-icon {
     background-image: url('../images/green-icon.png');
     background-repeat: no-repeat;
@@ -341,67 +382,3 @@ input:focus {
   bottom: 175px;
   left: 745px;
   }
-
-/* OLD OR UNUSED -> Remove if not needed!!! */
-/* #user-container {
-    text-align: center;
-    position: relative;
-    top: 50px;
-    float: left;
-    width: 990px;
-    height: 250px;
-    margin: 5px;
-    border-radius: 8px;
-    background: #f9e9d2;
-  }
-
-  #user-card {
-    float: center;
-    width: 240px;
-    height: 250px;
-    border-radius: 3px;
-    position: absolute;
-    left: 370px;
-    background: #bddebd;
-    color: #000000;
-  } */
-
-  /* #visit-form {
-    float: left;
-    position: absolute;
-    top: 35px;
-    right: 350px;
-  }
-
-  #rating-header {
-    font-size: 0.7rem;
-    font-weight: bold;
-    position: absolute;
-    left: 15px;
-    bottom: 34px;
-  }
-  
-  #rating-footer {
-    font-size: 0.7rem;
-    font-weight: bold;
-    position: absolute;
-    left: 105px;
-    bottom: 34px;
-  }
-
-  #user-parks {
-    float: right;
-    position: absolute;
-    top: 35px;
-    right: 75px;
-  }
-
-  #user-parks-list {
-    list-style: none;
-    font-size: 0.7rem;
-    height: 150px;
-    width: 170px;
-    margin-right: 10px;
-    overflow: hidden;
-    overflow-y: scroll;
-  } */
