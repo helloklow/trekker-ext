@@ -12,15 +12,31 @@ class ProfilePage extends PageManager {
 
     initBindingsAndEvents() {
         this.visitsContainer.style.visibility = 'visible'
-        this.addVisitBtn.addEventListener('click', this.visitForm.bind(this))
         this.logoutBtn.addEventListener('click', this.handleLogout.bind(this))
     }
 
-    // visitFormBindingsAndEvents() {
-    //     const form = document.querySelector('#add-visit-form')
-    //     console.log(form)
-    //     // form.addEventListener('submit', this.addVisit.bind(this))
-    // }
+    visitFormBindingsAndEvents(form) {
+        this.visitDate = document.querySelector('#visit-date')
+        this.visitNotes = document.querySelector('#visit-notes')
+        form.addEventListener('submit', this.addVisit.bind(this))
+    }
+
+    async addVisit(e) { // async? --> ADD PARK NAME IF ADDED TO DB SCHEAMA!!!!
+        e.preventDefault()
+        const date = this.visitDate.value 
+        const notes = this.visitNotes.value
+        const params = {
+            visit: {
+                date, notes
+            }
+        } 
+        try {
+            await this.visitsAdapter.addVisit(params)
+            console.log('visit added')
+        } catch(err) {
+            this.handleError(err)
+        }
+    }
 
     async fetchAndRenderPageResources() {
         try {
@@ -52,10 +68,11 @@ class ProfilePage extends PageManager {
 
     get staticHTML() {
         this.logoutBtn = document.querySelector('#logout-btn')
-        this.addVisitBtn = document.querySelector('#add-visit-btn')
+        this.form = document.querySelector('#add-visit-form')
+        this.visitFormBindingsAndEvents(this.form)
         if (this.is_authenticated) {
             this.logoutBtn.style.visibility="visible"
-            this.addVisitBtn.style.visibility="visible"
+            this.form.style.visibility="visible"
         }
         return (`
             <div class="loader"></div>
@@ -91,15 +108,8 @@ class ProfilePage extends PageManager {
         // console.log(this.profileAdapter.token)
     }
 
-    // addVisit(e) {
+    // visitForm(e) {
     //     e.preventDefault()
-    //     console.log('adding visit')
-    // }
-
-    visitForm(e) {
-        e.preventDefault()
-        const form = this.visitsContainer.querySelector('#add-visit-form')
-        console.log(form)
     //     // const visit = this.memoizedVisits
     //     // this.visitsContainer.innerHTML = visit.renderVisitForm
     //     this.visitsContainer.innerHTML = (`
@@ -130,13 +140,14 @@ class ProfilePage extends PageManager {
     //     // this.parkOptions()
     //     // this.visitFormBindingsAndEvents()
         
-    }
+    // }
 
-    // parkOptions() {
-    //     const select = document.querySelector('#input-park')
+    // parkOptions(form) {
+    //     const select = form.querySelector('#input-park')
     //     const options = this.memoizedParks.map(p => p.name)
     //     for (let i = 0; i < options.length; i++) {
     //         let opt = options[i]
+    //         console.log(opt)
     //         let el = document.createElement('option')
     //         el.innerText = opt 
     //         el.value = opt 

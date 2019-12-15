@@ -22,4 +22,13 @@ class VisitsAdapter {
         return await resp.json()
     }
 
+    async addVisit(params){
+        const resp = await fetch(`${this.baseURL}/visits`, {
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify(params)
+        })
+        await this.baseAdapter.checkStatus(resp) // Get error, if any
+    }
+
 }

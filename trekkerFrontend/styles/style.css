@@ -28,7 +28,7 @@ body {
 
 #header-container {
   position: relative;
-  bottom: 180px;
+  bottom: 140px;
   left: 290px;
   text-align: center;
   width: 420px;
@@ -39,9 +39,9 @@ body {
   position: relative;
   overflow: scroll;
   overflow-x: hidden;
-  left: 40px;
-  bottom: 80px;
-  width: 650px;
+  right: 210px;
+  bottom: 40px;
+  width: 400px;
   height: 330px;
   padding: 15px;
   margin: auto;
@@ -53,9 +53,31 @@ body {
   color: #636363;
 }
 
+#add-visit-form {
+  position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  left: 240px;
+  bottom: 370px;
+  width: 400px;
+  height: 330px;
+  padding: 15px;
+  margin: auto;
+  font-size: 1.3rem;
+  line-height: 14px;
+  border-radius: 8px;
+  border: 9px solid #bfddbf;
+  background: #bfddbf;
+  color: #636363;
+}
+
+.visit-form {
+  width: 670px;
+}
+
 #parks-container {
   position: relative;
-  bottom: 80px;
+  bottom: 420px;
   width: 1000px;
   margin: auto;
   }
@@ -141,7 +163,7 @@ input:focus {
 .park-card {
     float: left;
     width: 240px;
-    height: 245px;
+    height: 250px;
     margin: 5px;
     border-radius: 8px;
     position: relative;
@@ -167,7 +189,7 @@ input:focus {
     height: 190px;
     padding-left: 15px;
     position: absolute;
-    top: 45px;
+    top: 50px;
     background: #f9e9d2;
     color: #636363;
   }
@@ -191,10 +213,10 @@ input:focus {
 #visit-details {
   /* overflow: scroll;
   overflow-x: hidden; */
-  float: left;
+  float: right;
   font-size: 1.3rem;
   line-height: 14px;
-  width: 280px;
+  width: 335px;
   height: 150px;
   margin: 5px;
   padding: 10px;
