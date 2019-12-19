@@ -7,7 +7,6 @@ class ProfilePage extends PageManager {
         this.memoizedParks = []
         this.visitsAdapter = new VisitsAdapter(adapter)
         this.memoizedVisits = []
-        // this.visitedParks = []
     }
 
     initBindingsAndEvents() {
@@ -18,25 +17,25 @@ class ProfilePage extends PageManager {
     visitFormBindingsAndEvents(form) {
         this.visitDate = document.querySelector('#visit-date')
         this.visitNotes = document.querySelector('#visit-notes')
-        form.addEventListener('submit', this.addVisit.bind(this))
+        // form.addEventListener('submit', this.addVisit.bind(this))
     }
 
-    async addVisit(e) { // async? --> ADD PARK NAME IF ADDED TO DB SCHEAMA!!!!
-        e.preventDefault()
-        const date = this.visitDate.value 
-        const notes = this.visitNotes.value
-        const params = {
-            visit: {
-                date, notes
-            }
-        } 
-        try {
-            await this.visitsAdapter.addVisit(params)
-            console.log('visit added')
-        } catch(err) {
-            this.handleError(err)
-        }
-    }
+    // async addVisit(e) { // async? -> Add park name
+    //     e.preventDefault()
+    //     const date = this.visitDate.value 
+    //     const notes = this.visitNotes.value
+    //     const params = {
+    //         visit: {
+    //             date, notes
+    //         }
+    //     } 
+    //     try {
+    //         await this.visitsAdapter.addVisit(params)
+    //         console.log('visit added')
+    //     } catch(err) {
+    //         this.handleError(err)
+    //     }
+    // }
 
     async fetchAndRenderPageResources() {
         try {
@@ -56,7 +55,7 @@ class ProfilePage extends PageManager {
         try {
             const visitObjs = await this.visitsAdapter.getVisits()
             visitObjs.map(v => this.memoizedVisits.push(new Visit(v)))
-            this.renderVisits() // this.collectVisits()
+            this.renderVisits()
         } catch(err) {
             this.handleError(err)
         }
@@ -86,15 +85,6 @@ class ProfilePage extends PageManager {
     renderParks() {
         this.parksContainer.innerHTML = this.memoizedParks.map(p => p.parkCardHTML).join('')
     }
-
-    // collectVisits() {
-    //     const visitIds = this.memoizedVisits.map(v => v.park_id)
-    //     for (let id of visitIds) {
-    //         this.visitedParks.push(this.memoizedParks.find(p => p.id == id)
-    //         )}
-    //     this.visitsContainer.style.visibility = 'visible'
-    //     this.renderVisits()
-    // }
 
     renderVisits() {
         this.visitsContainer.innerHTML = this.memoizedVisits.map(v => v.visitHTML).join('')
