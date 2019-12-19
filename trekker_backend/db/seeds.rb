@@ -93,3 +93,4 @@ visit_l = Visit.create(date: "10/28/19", notes: "Such a stunning landscape. Did 
 visit_m = Visit.create(date: "10/31/19", notes: "Tons of interesting rock formations. I'd love to camp out and do some astrophotography next time.", user_id: 2, park_id: 7)
 visit_n = Visit.create(date: "11/4/19", notes: "Another Utah classic. Absolutely loved the Needles and especially Mesa Arch.", user_id: 2, park_id: 8)
 visit_o = Visit.create(date: "12/1/19", notes: "Gorgeous to drive through, dusk is great. Not one of my top parks, but still worth a visit.", user_id: 2, park_id: 9)
+visit_p = Visit.create(date: "12/4/19", notes: "I fall more in love with the desert every visit. After seeing all of Utah's parks, Arches is hands down the best.", user_id: 2, park_id: 2)

@@ -4,8 +4,10 @@ class Visit {
         this.visit_id = id
         this.date = date 
         this.notes = notes
-        this.park_id = park_id
         this.user_id = user_id
+        this.park_id = park_id
+        this.user = visit.user
+        this.park = visit.park
         this.visitBindingsAndEvents()
     }
 

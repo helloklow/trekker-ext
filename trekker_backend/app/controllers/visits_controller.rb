@@ -4,13 +4,13 @@ class VisitsController < ApplicationController
     def index
         visits = current_user.visits
         # visits = Visit.all
-        render json: visits.to_json(include: [:park])
+        render json: VisitSerializer.new(visits).to_serialized_json
     end
 
     def show
         visit = Visit.find(params[:id])
         authorize_user_resource(visit)
-        render_resource(visit, with: [:park])
+        render json: VisitSerializer.new(visit).to_serialized_json
     end
 
     def create 

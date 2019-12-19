@@ -354,7 +354,7 @@ input:focus {
   }
   
 /* LOADER & LOGOUT BUTTON */
-.loader {
+/* .loader {
   position: relative;
   left: 151px;
   top: 130px;
@@ -370,7 +370,7 @@ input:focus {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-  }
+  } */
 
 #logout-btn {
   position: relative;

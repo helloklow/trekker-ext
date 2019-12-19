@@ -7,6 +7,8 @@ class Park {
         this.est = est
         this.summary = summary 
         this.pic = pic
+        this.users = park.users
+        this.visits = park.visits
         this.cardBindingsAndEvents()
     }
 
